@@ -1314,6 +1314,12 @@ def get_model(model_args, training_args, bnb_model_from_pretrained_args):
         ]
     ):
         cfg_pretrained = AutoConfig.from_pretrained(model_args.model_name_or_path)
+        if not hasattr(cfg_pretrained, "attention_bias"):
+            cfg_pretrained.attention_bias = False
+        if not hasattr(cfg_pretrained, "rope_scaling"):
+            cfg_pretrained.rope_scaling = None
+
+    print(model_args.model_name_or_path.lower(), "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 
     if model_args.use_pos_skipping is not None and model_args.pos_skipping_range is not None:
         overwrite_config["use_pos_skipping"] = model_args.use_pos_skipping
@@ -1393,14 +1399,24 @@ def get_model(model_args, training_args, bnb_model_from_pretrained_args):
             or "nous-hermes" in model_args.model_name_or_path.lower()
             and "wizard-2" in model_args.model_name_or_path.lower()
         ):
+            # model = LlavaLlamaForCausalLM.from_pretrained(
+            #     model_args.model_name_or_path,
+            #     cache_dir=training_args.cache_dir,
+            #     attn_implementation=training_args.attn_implementation,
+            #     torch_dtype=(torch.bfloat16 if training_args.bf16 else None),
+            #     low_cpu_mem_usage=False,
+            #     **customized_kwargs,
+            # )
             model = LlavaLlamaForCausalLM.from_pretrained(
                 model_args.model_name_or_path,
                 cache_dir=training_args.cache_dir,
                 attn_implementation=training_args.attn_implementation,
-                torch_dtype=(torch.bfloat16 if training_args.bf16 else None),
+                torch_dtype=(torch.bfloat16 if training_args.bf16 else torch.float16),
                 low_cpu_mem_usage=False,
+                device_map="auto",  # This ensures the model is loaded onto GPU(s) as available.
                 **customized_kwargs,
             )
+
         elif "qwen" in model_args.model_name_or_path.lower():
             if "moe" in model_args.model_name_or_path.lower() or "A14B" in model_args.model_name_or_path:
                 model = LlavaQwenMoeForCausalLM.from_pretrained(
@@ -1443,6 +1459,16 @@ def get_model(model_args, training_args, bnb_model_from_pretrained_args):
             low_cpu_mem_usage=False,
             **customized_kwargs,
         )
+    #     model = transformers.LlamaForCausalLM.from_pretrained(
+    #     model_args.model_name_or_path,
+    #     cache_dir=training_args.cache_dir,
+    #     attn_implementation=training_args.attn_implementation,
+    #     torch_dtype=(torch.bfloat16 if training_args.bf16 else torch.float16),
+    #     low_cpu_mem_usage=True,
+    #     device_map="auto",  # This ensures the model is loaded onto GPU(s) as available.
+    #     **customized_kwargs,
+    # )
+    # model = model.to("cuda")    
     return model
 
 
