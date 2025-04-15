@@ -23,7 +23,7 @@ CUDA_VISIBLE_DEVICES=0,3,4 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=3
     --deepspeed /data/samyakp/LLaVA-NeXT/scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
     --version ${PROMPT_VERSION} \
-    --data_path /data/samyakp/video_llava/finetune.yaml \
+    --data_path /data/samyakp/LLaVA-NeXT/finetune.yaml \
     --video_folder /data/samyakp/llava_video_data \
     --vision_tower ${VISION_MODEL_VERSION} \
     --mm_tunable_parts "mm_mlp_adapter" \
