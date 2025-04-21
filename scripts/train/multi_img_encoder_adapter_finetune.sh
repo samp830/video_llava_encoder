@@ -21,10 +21,6 @@ PROMPT_VERSION="qwen_1_5"
 # Use a descriptive run name
 BASE_RUN_NAME="finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
-# wandb configure
-export WANDB_API_KEY="2d224beb5f93d3d6ecbeed76b3156b343270a0bf"
-wandb login $WANDB_API_KEY
-
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
 
@@ -58,7 +54,7 @@ CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 3000 \
+    --save_steps 1000 \
     --learning_rate 1e-5 \
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \

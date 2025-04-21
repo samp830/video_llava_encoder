@@ -16,7 +16,7 @@ VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 PROMPT_VERSION="qwen_1_5"
 
 # Use a descriptive run name
-BASE_RUN_NAME="videoLlaVaBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="videoLLaVaBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
@@ -34,6 +34,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --video_folder /data/samyakp/llava_video_data \
     --vision_tower ${VISION_MODEL_VERSION} \
     --mm_tunable_parts "mm_mlp_adapter" \
+    --mm_vision_select_layer -2 \
     --freeze_backbone True \
     --unfreeze_mm_vision_tower False \
     --tune_mm_mlp_adapter True \
@@ -42,6 +43,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --mm_use_im_patch_token False \
     --group_by_modality_length True \
     --image_aspect_ratio anyres \
+    --image_grid_pinpoints "[(384, 768), (768, 384), (768, 768), (1152, 384), (384, 1152)]" \
+    --mm_patch_merge_type spatial_unpad \
     --bf16 True \
     --run_name ${BASE_RUN_NAME} \
     --output_dir "/datastor1/jiahuikchen/vid_llava_checkpoints/${BASE_RUN_NAME}" \
@@ -52,6 +55,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --save_strategy "steps" \
     --save_steps 1000 \
     --learning_rate 1e-5 \
+    --weight_decay 0. \
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
@@ -60,40 +64,3 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --lazy_preprocess True \
     --report_to wandb
 exit 0;
-
-# # SAMYAK PATHS
-# CUDA_VISIBLE_DEVICES=0,3,4 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=3 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
-#     /data/samyakp/LLaVA-NeXT/llava/train/train_mem.py \
-#     --deepspeed /data/samyakp/LLaVA-NeXT/scripts/zero3.json \
-#     --model_name_or_path ${LLM_VERSION} \
-#     --version ${PROMPT_VERSION} \
-#     --data_path /data/samyakp/LLaVA-NeXT/finetune.yaml \
-#     --video_folder /data/samyakp/llava_video_data \
-#     --vision_tower ${VISION_MODEL_VERSION} \
-#     --mm_tunable_parts "mm_mlp_adapter" \
-#     --freeze_backbone True \
-#     --unfreeze_mm_vision_tower False \
-#     --tune_mm_mlp_adapter True \
-#     --mm_projector_type mlp2x_gelu \
-#     --mm_use_im_start_end False \
-#     --mm_use_im_patch_token False \
-#     --group_by_modality_length True \
-#     --image_aspect_ratio anyres \
-#     --bf16 True \
-#     --run_name ${BASE_RUN_NAME} \
-#     --output_dir "/data/samyakp/checkpoints/${BASE_RUN_NAME}" \
-#     --num_train_epochs 1 \
-#     --per_device_train_batch_size 1 \
-#     --gradient_accumulation_steps 1 \
-#     --evaluation_strategy "no" \
-#     --save_strategy "steps" \
-#     --save_steps 3000 \
-#     --learning_rate 1e-5 \
-#     --warmup_ratio 0.03 \
-#     --lr_scheduler_type "cosine" \
-#     --logging_steps 1 \
-#     --gradient_checkpointing True \
-#     --dataloader_num_workers 10 \
-#     --lazy_preprocess True \
-#     --report_to wandb
-# exit 0;
