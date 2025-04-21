@@ -6,6 +6,7 @@ from .hf_vision import HFVisionTower
 from .siglip_encoder import SigLipVisionTower
 from .clip_encoder import CLIPVisionTower, CLIPVisionTowerS2
 from .mlcd_encoder import MLCDVisionTower, MLCDVisionTowerS2
+from .multi_img_encoder import MultiImageEncoderVisionTower
 # from .eva_clip.eva_clip_encoder import EvaClipVisionTower
 # from .dev_eva_clip.eva_vit import EvaViTWrapper
 
@@ -32,6 +33,8 @@ def build_vision_tower(vision_tower_cfg, **kwargs):
             return MLCDVisionTowerS2(vision_tower, args=vision_tower_cfg, **kwargs)
         else:
             return MLCDVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
+    elif vision_tower == "multi_image_encoder":
+        return MultiImageEncoderVisionTower(vision_tower_cfg, **kwargs)
 
     # elif "internal-eva" in vision_tower.lower() or "eva02" in vision_tower.lower():
     #     return EvaClipVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)

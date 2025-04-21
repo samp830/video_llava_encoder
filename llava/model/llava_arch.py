@@ -63,6 +63,7 @@ class LlavaMetaModel:
 
         if self.get_vision_tower() is None:
             vision_tower = build_vision_tower(model_args)
+            # RELEVANT: In all their scripts, the resampler is just Identity/None
             vision_resampler = build_vision_resampler(model_args, vision_tower=vision_tower)
             for k, v in vision_resampler.config.items():
                 setattr(self.config, k, v)
@@ -88,11 +89,12 @@ class LlavaMetaModel:
 
         self.config.use_mm_proj = True
         self.config.mm_projector_type = getattr(model_args, "mm_projector_type", "linear")
+        # RELEVANT: where projection/adapter layer's input size is set
+        # Usually just defaults to vision_tower's hidden size (resamplers don't have this as an attr and default resampler is None)
         self.config.mm_hidden_size = getattr(vision_resampler, "hidden_size", vision_tower.hidden_size)
         self.config.mm_vision_select_layer = mm_vision_select_layer
         self.config.mm_vision_select_feature = mm_vision_select_feature
         self.config.mm_patch_merge_type = mm_patch_merge_type
-
         
         if not hasattr(self.config, 'add_faster_video'):
             if model_args.add_faster_video:
@@ -171,8 +173,11 @@ class LlavaMetaForCausalLM(ABC):
     def get_2dPool(self, image_feature, stride=2):
         height = width = self.get_vision_tower().num_patches_per_side
         num_frames, num_tokens, num_dim = image_feature.shape
+        # Reshapes image_feature from (num_frames, num_tokens, num_dim) to (num_frames, height, width, num_dim), into original 2D image patch grid
         image_feature = image_feature.view(num_frames, height, width, -1)
-        image_feature = image_feature.permute(0, 3, 1, 2).contiguous()
+        image_feature = image_feature.permute(0, 3, 1, 2).contiguous() 
+        # # DEBUG
+        # rank0_print(f"\n\n\nimage_feature RESHAPED in get_2dPool shape: {image_feature.shape}") 
         # image_feature = nn.functional.max_pool2d(image_feature, self.config.mm_spatial_pool_stride)
         if self.config.mm_spatial_pool_mode == "average":
             image_feature = nn.functional.avg_pool2d(image_feature, stride)
@@ -187,12 +192,17 @@ class LlavaMetaForCausalLM(ABC):
             raise ValueError(f"Unexpected mm_spatial_pool_mode: {self.config.mm_spatial_pool_mode}")
         image_feature = image_feature.permute(0, 2, 3, 1)
         image_feature = image_feature.view(num_frames, -1, num_dim)
+        # # DEBUG
+        # rank0_print(f"\n\n\nimage_feature AFTER get_2dPool shape: {image_feature.shape}")
         return image_feature
 
     def encode_images(self, images):
         image_features = self.get_model().get_vision_tower()(images)
-        # image_features = self.get_model().vision_resampler(image_features, images=images)
+        # # DEBUG
+        # rank0_print(f"\n\n\nvision_tower() output shape: {image_features.shape}")
         image_features = self.get_model().mm_projector(image_features)
+        # # DEBUG
+        # rank0_print(f"\n\n\nmm_projector output shape: {image_features.shape}")
         return image_features
     
     def encode_multimodals(self, videos_or_images, video_idx_in_batch, split_sizes=None):
@@ -249,6 +259,7 @@ class LlavaMetaForCausalLM(ABC):
         return image_feature
 
     def prepare_inputs_labels_for_multimodal(self, input_ids, position_ids, attention_mask, past_key_values, labels, images, modalities=["image"], image_sizes=None):
+        # breakpoint()
         vision_tower = self.get_vision_tower()
         # rank_print(modalities)
         if vision_tower is None or images is None or input_ids.shape[1] == 1:
@@ -257,7 +268,6 @@ class LlavaMetaForCausalLM(ABC):
         if isinstance(modalities, str):
             modalities = [modalities]
 
-        # import pdb; pdb.set_trace()
         if type(images) is list or images.ndim == 5:
             if type(images) is list:
                 images = [x.unsqueeze(0) if x.ndim == 3 else x for x in images]

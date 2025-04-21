@@ -41,6 +41,7 @@ def build_vision_projector(config, delay_load=False, **kwargs):
     mlp_gelu_match = re.match(r"^mlp(\d+)x_gelu$", projector_type)
     if mlp_gelu_match:
         mlp_depth = int(mlp_gelu_match.group(1))
+        # RELEVANT: config.hidden_size is LLM/Qwen's size, mm_hidden_size is vision feature size
         modules = [nn.Linear(config.mm_hidden_size, config.hidden_size)]
         for _ in range(1, mlp_depth):
             modules.append(nn.GELU())

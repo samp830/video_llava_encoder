@@ -1431,6 +1431,8 @@ def get_model(model_args, training_args, bnb_model_from_pretrained_args):
 
                 deepspeed.utils.set_z3_leaf_modules(model, [Qwen2MoeSparseMoeBlock])
             else:
+                # RELEVANT: LLM-only init call
+                # hasattr(config, "mm_vision_tower") is False in LlavaMetaModel, vision builder methods ARE NOT CALLED
                 model = LlavaQwenForCausalLM.from_pretrained(
                     model_args.model_name_or_path,
                     cache_dir=training_args.cache_dir,
@@ -1509,6 +1511,9 @@ def train(attn_implementation=None):
             )
         )
 
+    # RELEVANT
+    # type(model) is LlavaQwenForCausalLM, wrapper for LlavaQwenModel
+    # which is the LlavaMetaModel multimodal model, BUT VISION TOWER NOT INITIALIZED HERE (mm_hidden_size doesn't exist in model_args)
     model = get_model(model_args, training_args, bnb_model_from_pretrained_args)
     model.config.use_cache = False
     if model_args.rope_scaling_factor is not None and model_args.rope_scaling_type is not None:
@@ -1593,7 +1598,10 @@ def train(attn_implementation=None):
         else:
             conversation_lib.default_conversation = conversation_lib.conv_templates["vicuna_v1"]
 
+    # RELEVANT
     if model_args.vision_tower is not None:
+        # Calls line 54 of llava/model/llava_arch.py
+        # Which actually calls builder methods for vision encoder, connector, etc 
         model.get_model().initialize_vision_modules(model_args=model_args, fsdp=training_args.fsdp)
 
         vision_tower = model.get_vision_tower()
