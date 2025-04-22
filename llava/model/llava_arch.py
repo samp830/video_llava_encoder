@@ -62,6 +62,7 @@ class LlavaMetaModel:
         self.config.vision_tower_pretrained = getattr(model_args, "vision_tower_pretrained", "")
 
         if self.get_vision_tower() is None:
+            # breakpoint()
             vision_tower = build_vision_tower(model_args)
             # RELEVANT: In all their scripts, the resampler is just Identity/None
             vision_resampler = build_vision_resampler(model_args, vision_tower=vision_tower)
@@ -306,6 +307,8 @@ class LlavaMetaForCausalLM(ABC):
             mm_newline_position = getattr(self.config, "mm_newline_position", "one_token")
 
             if mm_patch_merge_type == "flat":
+                # RELEVANT: image_features flattened across frames and patches to:(aggregate of patches across ALL frames, feature_dim)
+                # For video embeddings we'd just have (1, feature_dim)
                 image_features = [x.flatten(0, 1) for x in image_features]
 
             elif mm_patch_merge_type.startswith("spatial"):
@@ -420,6 +423,8 @@ class LlavaMetaForCausalLM(ABC):
                             image_feature = torch.cat((image_feature, self.model.image_newline[None]), dim=0)
 
                         new_image_features.append(image_feature)
+                # RELEVANT: here image_features are 2D torch.Size([aggregate of patches across ALL frames, feature_dim])
+                # but no learned aggregations
                 image_features = new_image_features
             else:
                 raise ValueError(f"Unexpected mm_patch_merge_type: {self.config.mm_patch_merge_type}")

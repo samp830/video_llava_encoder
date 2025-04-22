@@ -1191,9 +1191,11 @@ class LazySupervisedDataset(Dataset):
                         except IOError:
                             print(f"Failed to read frame at path: {frame_path}")
                 else:
+                    # RELEVANT: samples 34 frames, video is np array with size (34, 360, 640, 3)
                     video, video_time, frame_time, num_frames_to_sample = process_video_with_decord(video_file, self.data_args)
 
                 processor = self.data_args.image_processor
+                # breakpoint()
                 image = processor.preprocess(video, return_tensors="pt")["pixel_values"]
                 if self.data_args.add_time_instruction:
                     time_instruciton = f"The video lasts for {video_time:.2f} seconds, and {num_frames_to_sample} frames are uniformly sampled from it. These frames are located at {frame_time}.Please answer the following questions related to this video."
@@ -1235,7 +1237,6 @@ class LazySupervisedDataset(Dataset):
             data_dict["prompt"] = prompt
 
         data_dict["id"] = self.list_data_dict[i].get("id", i)
-
         return data_dict
 
 
@@ -1283,12 +1284,16 @@ class DataCollatorForSupervisedDataset(object):
         if "prompt" in instances[0]:
             batch["prompts"] = [instance["prompt"] for instance in instances]
 
+        # TODO: use this to load video encodings based on flag
+        batch['embeddings'] = [torch.ones([1], dtype=torch.float32)]
+        # breakpoint()
         return batch
 
 
 def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer, data_args) -> Dict:
     """Make dataset and collator for supervised fine-tuning."""
     train_dataset = LazySupervisedDataset(tokenizer=tokenizer, data_path=data_args.data_path, data_args=data_args)
+    # TODO: can pass in field to include video embeddings or not here
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset, eval_dataset=None, data_collator=data_collator)
 
@@ -1607,6 +1612,10 @@ def train(attn_implementation=None):
         vision_tower = model.get_vision_tower()
         vision_tower.to(dtype=torch.bfloat16 if training_args.bf16 else torch.float16, device=training_args.device)
 
+        # DEBUG
+        # breakpoint()
+        # if 'siglip' in model_args.vision_tower:
+            # data_args.image_processor = vision_tower.image_processor 
         data_args.image_processor = vision_tower.image_processor
         data_args.is_multimodal = True
 
@@ -1724,6 +1733,7 @@ def train(attn_implementation=None):
                     if training_args.bf16 and module.weight.dtype == torch.float32:
                         module = module.to(torch.bfloat16)
 
+    # breakpoint()
     data_module = make_supervised_data_module(tokenizer=tokenizer, data_args=data_args)
     trainer = LLaVATrainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
 

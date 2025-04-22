@@ -25,7 +25,7 @@ wandb online
 
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=3 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
+CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=1 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
     /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
     --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
@@ -44,7 +44,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --group_by_modality_length True \
     --image_aspect_ratio anyres \
     --image_grid_pinpoints "[(384, 768), (768, 384), (768, 768), (1152, 384), (384, 1152)]" \
-    --mm_patch_merge_type spatial_unpad \
     --bf16 True \
     --run_name ${BASE_RUN_NAME} \
     --output_dir "/datastor1/jiahuikchen/vid_llava_checkpoints/${BASE_RUN_NAME}" \
@@ -60,7 +59,9 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
     --gradient_checkpointing True \
-    --dataloader_num_workers 10 \
+    --dataloader_num_workers 0 \
     --lazy_preprocess True \
     --report_to wandb
 exit 0;
+
+    # --mm_patch_merge_type spatial_unpad \

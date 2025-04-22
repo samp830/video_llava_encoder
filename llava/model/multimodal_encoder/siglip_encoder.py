@@ -27,12 +27,20 @@ from transformers.activations import ACT2FN
 from transformers.modeling_outputs import BaseModelOutput, BaseModelOutputWithPooling
 from transformers.modeling_utils import PreTrainedModel
 from transformers import PretrainedConfig
+from transformers import CLIPImageProcessor, AutoProcessor, AutoModel
 from transformers.utils import ModelOutput
 from llava.utils import rank0_print
 
 
-class SigLipImageProcessor:
-    def __init__(self, image_mean=(0.5, 0.5, 0.5), image_std=(0.5, 0.5, 0.5), size=(384, 384), crop_size: Dict[str, int] = None, resample=PILImageResampling.BICUBIC, rescale_factor=1 / 255, data_format=ChannelDimension.FIRST):
+
+class SigLipImageProcessor():
+    def __init__(
+        self, 
+        image_mean=(0.5, 0.5, 0.5), 
+        image_std=(0.5, 0.5, 0.5), 
+        size=(384, 384), 
+        crop_size: Dict[str, int] = None, resample=PILImageResampling.BICUBIC, rescale_factor=1 / 255, data_format=ChannelDimension.FIRST
+    ):
         crop_size = crop_size if crop_size is not None else {"height": 384, "width": 384}
         crop_size = get_size_dict(crop_size, default_to_square=True, param_name="crop_size")
 
@@ -536,55 +544,83 @@ class SigLipVisionModel(SigLipPreTrainedModel):
 
 
 class SigLipVisionTower(nn.Module):
-    def __init__(self, vision_tower, vision_tower_cfg, delay_load=False):
+    def __init__(self, vision_tower, args, delay_load=False):
         super().__init__()
 
         self.is_loaded = False
 
-        self.config = SigLipVisionConfig()
+        self._config = SigLipVisionConfig()
 
         self.vision_tower_name = vision_tower
+        self.select_layer = args.mm_vision_select_layer
+        self.select_feature = getattr(args, "mm_vision_select_feature", "patch")
 
-        self.image_processor = SigLipImageProcessor()
+        # self.image_processor = SigLipImageProcessor()
 
         if not delay_load:
             rank0_print(f"Loading vision tower: {vision_tower}")
             self.load_model()
-        elif getattr(vision_tower_cfg, "unfreeze_mm_vision_tower", False):
+        elif getattr(args, "unfreeze_mm_vision_tower", False):
             # TODO: better detector is needed.
             rank0_print(f"The checkpoint seems to contain `vision_tower` weights: `unfreeze_mm_vision_tower`: True.")
             self.load_model()
-        elif hasattr(vision_tower_cfg, "mm_tunable_parts") and "mm_vision_tower" in vision_tower_cfg.mm_tunable_parts:
+        elif hasattr(args, "mm_tunable_parts") and "mm_vision_tower" in args.mm_tunable_parts:
             rank0_print(f"The checkpoint seems to contain `vision_tower` weights: `mm_tunable_parts` contains `mm_vision_tower`.")
             self.load_model()
         else:
-            self.cfg_only = self.config
+            self.cfg_only = SigLipVisionConfig()
 
     def load_model(self, device_map=None):
         if self.is_loaded:
             rank0_print("{} is already loaded, `load_model` called again, skipping.".format(self.vision_tower_name))
             return
 
-        self.vision_tower = SigLipVisionModel.from_pretrained(self.vision_tower_name, device_map=device_map)
+        # self.image_processor = AutoProcessor.from_pretrained(self.vision_tower_name)
+        self.image_processor = SigLipImageProcessor()
+        # self.image_processor = CLIPImageProcessor.from_pretrained(self.vision_tower_name)
+        self.vision_tower = AutoModel.from_pretrained(self.vision_tower_name, device_map=device_map)
 
-        del self.vision_tower.vision_model.encoder.layers[-1:]
-        self.vision_tower.vision_model.head = nn.Identity()
         self.vision_tower.requires_grad_(False)
 
         self.is_loaded = True
+
+    def feature_select(self, image_forward_outs):
+        select_feature_type = self.select_feature
+
+        if self.select_feature in ["slicefour_patch", "slicefour_cls_patch"]:
+            select_every_k_layer = len(image_forward_outs.hidden_states) // 4
+            image_features = torch.cat([image_forward_outs.hidden_states[i] for i in range(select_every_k_layer + self.select_layer, len(image_forward_outs.hidden_states), select_every_k_layer)], dim=-1)
+            select_feature_type = select_feature_type.replace("slicefour_", "")
+        elif self.select_feature in ["slice_m25811_f6_patch", "slice_m25811_f6_cls_patch"]:
+            select_layers = [-2, -5, -8, -11, 6]
+            image_features = torch.cat([image_forward_outs.hidden_states[i] for i in select_layers], dim=-1)
+            select_feature_type = select_feature_type.replace("slice_m25811_f6_", "")
+        else:
+            image_features = image_forward_outs.hidden_states[self.select_layer]
+
+        if select_feature_type == "patch":
+            image_features = image_features[:, 1:]
+        elif select_feature_type == "cls_patch":
+            image_features = image_features
+        else:
+            raise ValueError(f"Unexpected select feature: {select_feature_type}")
+        return image_features
 
     def forward(self, images):
         if type(images) is list:
             image_features = []
             for image in images:
                 image_forward_out = self.vision_tower(image.to(device=self.device, dtype=self.dtype).unsqueeze(0), output_hidden_states=True)
-                image_feature = image_forward_out.hidden_states[-1].to(image.dtype)
-                assert image_features.shape[-2] == 729
+                image_feature = self.feature_select(image_forward_out).to(image.dtype)
                 image_features.append(image_feature)
+                # image_feature = image_forward_out.hidden_states[-1].to(image.dtype)
+                # assert image_features.shape[-2] == 729
+                # image_features.append(image_feature)
         else:
             image_forward_outs = self.vision_tower(images.to(device=self.device, dtype=self.dtype), output_hidden_states=True)
-            image_features = image_forward_outs.hidden_states[-1].to(images.dtype)
-            assert image_features.shape[-2] == 729
+            image_features = self.feature_select(image_forward_outs).to(images.dtype)
+            # image_features = image_forward_outs.hidden_states[-1].to(images.dtype)
+            # assert image_features.shape[-2] == 729
 
         return image_features
 
@@ -603,9 +639,21 @@ class SigLipVisionTower(nn.Module):
             return p.device
 
     @property
-    def hidden_size(self):
-        return self.config.hidden_size
+    def config(self):
+        if self.is_loaded:
+            return self._config
+            # return self.vision_tower.config
+        else:
+            return self.cfg_only
 
+    @property
+    def hidden_size(self):
+        _hidden_size = self.config.hidden_size
+        if "slicefour" in self.select_feature:
+            _hidden_size *= 4
+        if "slice_m25811_f6" in self.select_feature:
+            _hidden_size *= 5
+        return _hidden_size
     @property
     def num_patches(self):
         return (self.config.image_size // self.config.patch_size) ** 2
