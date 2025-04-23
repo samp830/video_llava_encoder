@@ -1237,6 +1237,10 @@ class LazySupervisedDataset(Dataset):
             data_dict["prompt"] = prompt
 
         data_dict["id"] = self.list_data_dict[i].get("id", i)
+
+        # KAREN_TODO: load video encodings based on vision tower,
+        # do concatenation of embeddings if specified here too 
+
         return data_dict
 
 
@@ -1284,16 +1288,18 @@ class DataCollatorForSupervisedDataset(object):
         if "prompt" in instances[0]:
             batch["prompts"] = [instance["prompt"] for instance in instances]
 
-        # TODO: use this to load video encodings based on flag
+        # KAREN_TODO: use this to include video encodings in instance dict in the returned batch
+        # (actual loading done in _get_item)
         batch['embeddings'] = [torch.ones([1], dtype=torch.float32)]
         # breakpoint()
+
         return batch
 
 
 def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer, data_args) -> Dict:
     """Make dataset and collator for supervised fine-tuning."""
+    # KAREN_TODO: pass in arg to include video embeddings or not here
     train_dataset = LazySupervisedDataset(tokenizer=tokenizer, data_path=data_args.data_path, data_args=data_args)
-    # TODO: can pass in field to include video embeddings or not here
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset, eval_dataset=None, data_collator=data_collator)
 
@@ -1603,7 +1609,7 @@ def train(attn_implementation=None):
         else:
             conversation_lib.default_conversation = conversation_lib.conv_templates["vicuna_v1"]
 
-    # RELEVANT
+    # RELEVANT: Initializing all vision components
     if model_args.vision_tower is not None:
         # Calls line 54 of llava/model/llava_arch.py
         # Which actually calls builder methods for vision encoder, connector, etc 
@@ -1734,6 +1740,7 @@ def train(attn_implementation=None):
                         module = module.to(torch.bfloat16)
 
     # breakpoint()
+    # KAREN_TODO: pass in vision tower name... model_args.vision_tower
     data_module = make_supervised_data_module(tokenizer=tokenizer, data_args=data_args)
     trainer = LLaVATrainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
 

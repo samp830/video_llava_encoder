@@ -18,14 +18,14 @@ PROMPT_VERSION="qwen_1_5"
 # Use a descriptive run name
 BASE_RUN_NAME="videoLLaVaBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
-export WANDB_NAME=$BASE_RUN_NAME
-export WANDB_PROJECT=VideoEncoders
+# export WANDB_NAME=$BASE_RUN_NAME
+# export WANDB_PROJECT=VideoEncoders
 
-wandb online
+# wandb online
 
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=1 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
+CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
     /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
     --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
@@ -46,13 +46,14 @@ CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --image_grid_pinpoints "[(384, 768), (768, 384), (768, 768), (1152, 384), (384, 1152)]" \
     --bf16 True \
     --run_name ${BASE_RUN_NAME} \
-    --output_dir "/datastor1/jiahuikchen/vid_llava_checkpoints/${BASE_RUN_NAME}" \
-    --num_train_epochs 1 \
+    --output_dir "/data/jiahuic/vid_llava_checkpoints/${BASE_RUN_NAME}" \
+    --num_train_epochs 3 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 1000 \
+    --save_steps 3000 \
+    --save_total_limit 3 \
     --learning_rate 1e-5 \
     --weight_decay 0. \
     --warmup_ratio 0.03 \

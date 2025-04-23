@@ -269,6 +269,9 @@ class LlavaMetaForCausalLM(ABC):
         if isinstance(modalities, str):
             modalities = [modalities]
 
+        # KAREN_TODO: if video_embedding ONLY, 
+        # image_features = [embedding]
+        # also add case where vision tower forward happens but also concat to video emebedding
         if type(images) is list or images.ndim == 5:
             if type(images) is list:
                 images = [x.unsqueeze(0) if x.ndim == 3 else x for x in images]

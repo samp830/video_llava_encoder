@@ -21,8 +21,10 @@ def build_vision_tower(vision_tower_cfg, **kwargs):
         else:
             return CLIPVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
     elif "siglip" in vision_tower:
-        return SigLipVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
-        # return SigLipVisionTower(vision_tower, vision_tower_cfg=vision_tower_cfg, **kwargs)
+        return SigLipVisionTower(vision_tower, vision_tower_cfg=vision_tower_cfg, **kwargs)
+    # elif "siglip" in vision_tower:
+    #     return SigLipVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
+    #     # return SigLipVisionTower(vision_tower, vision_tower_cfg=vision_tower_cfg, **kwargs)
     elif vision_tower.startswith("hf:"):
         return HFVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
     elif vision_tower in ["imagebind_huge"]:
