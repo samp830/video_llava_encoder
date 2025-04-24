@@ -19,7 +19,7 @@ PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="CLIP_MLCD_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
@@ -48,13 +48,14 @@ CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --image_aspect_ratio anyres \
     --bf16 True \
     --run_name ${BASE_RUN_NAME} \
-    --output_dir "/datastor1/jiahuikchen/vid_llava_checkpoints/${BASE_RUN_NAME}" \
-    --num_train_epochs 1 \
+    --output_dir "/data/jiahuic/vid_llava_checkpoints/${BASE_RUN_NAME}" \
+    --num_train_epochs 3 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 1000 \
+    --save_steps 3000 \
+    --save_total_limit 3 \
     --learning_rate 1e-5 \
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \

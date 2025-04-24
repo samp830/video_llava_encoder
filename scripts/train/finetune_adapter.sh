@@ -10,22 +10,24 @@ export NCCL_DEBUG=INFO
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # LLM_VERSION="Qwen/Qwen2.5-1.5B-Instruct"
 # VISION_MODEL_VERSION="openai/clip-vit-large-patch14-336"
-VISION_MODEL_VERSION="google/siglip-so400m-patch14-384"
+VISION_MODEL_VERSION="openai/clip-vit-base-patch16"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 # Use a descriptive run name
-BASE_RUN_NAME="videoLlaVaBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="videoLlaVaCLIPBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
 
 wandb online
 
+# CKPT_PATH="/data/jiahuic/vid_llava_checkpoints/videoLlaVaCLIPBaselinefinetune_only-adapters-openai_clip-vit-base-patch16-Qwen_Qwen2-7B-Instruct/"
+
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=3 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
+CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29503 \
     /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
     --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
@@ -44,13 +46,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --image_aspect_ratio anyres \
     --bf16 True \
     --run_name ${BASE_RUN_NAME} \
-    --output_dir "/datastor1/jiahuikchen/vid_llava_checkpoints/${BASE_RUN_NAME}" \
-    --num_train_epochs 1 \
+    --output_dir "/data/jiahuic/vid_llava_checkpoints/${BASE_RUN_NAME}" \
+    --num_train_epochs 3 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 1000 \
+    --save_steps 3000 \
+    --save_total_limit 3 \
     --learning_rate 1e-5 \
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \
@@ -60,6 +63,8 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --lazy_preprocess True \
     --report_to wandb
 exit 0;
+
+# --model_name_or_path ${LLM_VERSION} \
 
 # # SAMYAK PATHS
 # CUDA_VISIBLE_DEVICES=0,3,4 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=3 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \

@@ -18,12 +18,13 @@ class MultiImageEncoderVisionTower(nn.Module):
 
         rank0_print(f"Loading TriEncoder (CLIP, SigLIP, MLCD) Vision Tower")
         # CLIP
+        # I should've used: "openai/clip-vit-large-patch14-336" to match 14-patch MLCD
         self.clip = CLIPVisionTower("openai/clip-vit-base-patch16", args=vision_tower_cfg, **kwargs)
         # MLCD
         self.mlcd = MLCDVisionTower("DeepGlint-AI/mlcd-vit-bigG-patch14-448", args=vision_tower_cfg, **kwargs)
 
-        # SigLIP -- gets a size mismatch error when loading pretrained
-        # self.siglip = SigLipVisionTower("google/siglip-base-patch16-224", vision_tower_cfg=vision_tower_cfg, **kwargs)
+        # SigLIP 
+        # self.siglip = SigLipVisionTower("google/siglip-so400m-patch14-384", vision_tower_cfg=vision_tower_cfg, **kwargs)
 
         # Both CLIP and MLCD use the CLIPImageProcessor
         self.image_processor = self.clip.image_processor
@@ -41,6 +42,7 @@ class MultiImageEncoderVisionTower(nn.Module):
         #  torch.Size([33, 196, 768])
         clip_features = self.clip(images)
         # torch.Size([33, 256, 1664])
+        # TODO: SigLIP features should be directly concatenated (14 patches)
         # siglip_features = self.siglip(images)
         mlcd_features = self.mlcd(images)
 

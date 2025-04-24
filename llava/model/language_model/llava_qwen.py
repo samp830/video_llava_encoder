@@ -60,6 +60,8 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
     def get_model(self):
         return self.model
 
+    # KAREN_TODO: add argument for video_embedding AND video_and_img_embedding
+    # And pass into prepare_inputs_labels_for_multimodal to handle vision tower
     def forward(
         self,
         input_ids: torch.LongTensor = None,
@@ -79,12 +81,12 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
         dpo_forward: Optional[bool] = False,
         cache_position=None,
     ) -> Union[Tuple, CausalLMOutputWithPast]:
-        # breakpoint()
+        # breakpoint() # cursed breakpoint that doesn't work...
 
         if inputs_embeds is None:
             # RELEVANT: All vision components called here
             (input_ids, position_ids, attention_mask, past_key_values, inputs_embeds, labels) = self.prepare_inputs_labels_for_multimodal(input_ids, position_ids, attention_mask, past_key_values, labels, images, modalities, image_sizes)
-        breakpoint()
+        # breakpoint()
 
         if dpo_forward:
             outputs = self.model(
