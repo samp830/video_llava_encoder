@@ -2,8 +2,10 @@ export OMP_NUM_THREADS=8
 # export NCCL_IB_DISABLE=1
 export NCCL_IB_DISABLE=0
 # export NCCL_IB_GID_INDEX=3
-#export NCCL_SOCKET_IFNAME=eth0
-export NCCL_SOCKET_IFNAME=enp226s0f0
+# A100s!
+export NCCL_SOCKET_IFNAME=eth0
+# # MLL
+# export NCCL_SOCKET_IFNAME=enp226s0f0
 export NCCL_DEBUG=INFO
 
 
@@ -12,26 +14,27 @@ export NCCL_DEBUG=INFO
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # LLM_VERSION="Qwen/Qwen2.5-1.5B-Instruct"
 # VISION_MODEL_VERSION="openai/clip-vit-large-patch14-336"
-VISION_MODEL_VERSION="multi_image_encoder"
+VISION_MODEL_VERSION="multi_image_siglip_clip"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="max32768_CLIP_MLCD_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="SigLIP_CLIP_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
-export WANDB_NAME=$BASE_RUN_NAME
-export WANDB_PROJECT=VideoEncoders
+# export WANDB_NAME=$BASE_RUN_NAME
+# export WANDB_PROJECT=VideoEncoders
 
-export WANDB_MODE=online
-wandb online
+# export WANDB_MODE=online
+# wandb online
 
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=2 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
-    /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
-    --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
+# CUDA_VISIBLE_DEVICES=4,5,6,7
+torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
+    ../../llava/train/train_mem.py  \
+    --deepspeed $(readlink -f ../zero3.json) \
     --model_name_or_path ${LLM_VERSION} \
     --version ${PROMPT_VERSION} \
     --data_path /datastor1/jiahuikchen/video_llava_encoder/finetune.yaml \

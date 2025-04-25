@@ -20,6 +20,8 @@ def build_vision_tower(vision_tower_cfg, **kwargs):
             return CLIPVisionTowerS2(vision_tower, args=vision_tower_cfg, **kwargs)
         else:
             return CLIPVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
+    elif "multi_image" in vision_tower:
+        return MultiImageEncoderVisionTower(vision_tower, vision_tower_cfg, **kwargs) 
     elif "siglip" in vision_tower:
         return SigLipVisionTower(vision_tower, vision_tower_cfg=vision_tower_cfg, **kwargs)
     # elif "siglip" in vision_tower:
@@ -36,8 +38,6 @@ def build_vision_tower(vision_tower_cfg, **kwargs):
             return MLCDVisionTowerS2(vision_tower, args=vision_tower_cfg, **kwargs)
         else:
             return MLCDVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
-    elif vision_tower == "multi_image_encoder":
-        return MultiImageEncoderVisionTower(vision_tower_cfg, **kwargs)
 
     # elif "internal-eva" in vision_tower.lower() or "eva02" in vision_tower.lower():
     #     return EvaClipVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)

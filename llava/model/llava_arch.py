@@ -192,7 +192,7 @@ class LlavaMetaForCausalLM(ABC):
         else:
             raise ValueError(f"Unexpected mm_spatial_pool_mode: {self.config.mm_spatial_pool_mode}")
         image_feature = image_feature.permute(0, 2, 3, 1)
-        image_feature = image_feature.view(num_frames, -1, num_dim)
+        image_feature = image_feature.contiguous().view(num_frames, -1, num_dim)
         # # DEBUG
         # rank0_print(f"\n\n\nimage_feature AFTER get_2dPool shape: {image_feature.shape}")
         return image_feature

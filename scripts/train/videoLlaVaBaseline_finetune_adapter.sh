@@ -2,8 +2,10 @@ export OMP_NUM_THREADS=8
 # export NCCL_IB_DISABLE=1
 export NCCL_IB_DISABLE=0
 # export NCCL_IB_GID_INDEX=3
-#export NCCL_SOCKET_IFNAME=eth0
-export NCCL_SOCKET_IFNAME=enp226s0f0
+# A100s!
+export NCCL_SOCKET_IFNAME=eth0
+# MLL
+# export NCCL_SOCKET_IFNAME=enp226s0f0
 export NCCL_DEBUG=INFO
 
 # Base model and vision model names (adjust as needed)
@@ -25,9 +27,10 @@ wandb online
 
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
-    /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
-    --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
+# CUDA_VISIBLE_DEVICES=4,5,6,7
+ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
+    ../../llava/train/train_mem.py \
+    --deepspeed $(readlink -f ../zero3.json) \
     --model_name_or_path ${LLM_VERSION} \
     --version ${PROMPT_VERSION} \
     --data_path /datastor1/jiahuikchen/video_llava_encoder/finetune.yaml \
