@@ -16,16 +16,16 @@ VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 PROMPT_VERSION="qwen_1_5"
 
 # Use a descriptive run name
-BASE_RUN_NAME="videoLLaVaBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="videoLLaVaSigLIPBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
-# export WANDB_NAME=$BASE_RUN_NAME
-# export WANDB_PROJECT=VideoEncoders
+export WANDB_NAME=$BASE_RUN_NAME
+export WANDB_PROJECT=VideoEncoders
 
-# wandb online
+wandb online
 
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
+CUDA_VISIBLE_DEVICES=4,5,6,7 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
     /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
     --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
@@ -41,6 +41,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --mm_projector_type mlp2x_gelu \
     --mm_use_im_start_end False \
     --mm_use_im_patch_token False \
+    --mm_patch_merge_type spatial_unpad \
     --group_by_modality_length True \
     --image_aspect_ratio anyres \
     --image_grid_pinpoints "[(384, 768), (768, 384), (768, 768), (1152, 384), (384, 1152)]" \
@@ -59,10 +60,11 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
+    --model_max_length 32768 \
     --gradient_checkpointing True \
-    --dataloader_num_workers 0 \
+    --dataloader_num_workers 10 \
     --lazy_preprocess True \
     --report_to wandb
-exit 0;
+# exit 0;
 
     # --mm_patch_merge_type spatial_unpad \

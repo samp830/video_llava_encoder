@@ -3130,6 +3130,7 @@ class Trainer:
         """
         model.train()
         inputs = self._prepare_inputs(inputs)
+        breakpoint()
 
         if is_sagemaker_mp_enabled():
             loss_mb = smp_forward_backward(model, inputs, self.args.gradient_accumulation_steps)
@@ -3159,8 +3160,9 @@ class Trainer:
             labels = inputs.pop("labels")
         else:
             labels = None
+        # breakpoint()
         outputs = model(**inputs)
-        breakpoint()
+        # breakpoint()
         # Save past state if it exists
         # TODO: this needs to be fixed and made cleaner later.
         if self.args.past_index >= 0:

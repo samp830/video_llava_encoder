@@ -16,18 +16,19 @@ VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 PROMPT_VERSION="qwen_1_5"
 
 # Use a descriptive run name
-BASE_RUN_NAME="videoLlaVaCLIPBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="max32768_videoLlaVaCLIPBaselinefinetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
 
 wandb online
 
-# CKPT_PATH="/data/jiahuic/vid_llava_checkpoints/videoLlaVaCLIPBaselinefinetune_only-adapters-openai_clip-vit-base-patch16-Qwen_Qwen2-7B-Instruct/"
+# Can try this to load pretrained adapter:
+# --pretrain_mm_mlp_adapter="/checkpoints/projectors/${BASE_RUN_NAME}/mm_projector.bin" \
 
 
 # KAREN PATHS
-CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29503 \
+CUDA_VISIBLE_DEVICES=0,1 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=2 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29503 \
     /datastor1/jiahuikchen/video_llava_encoder/llava/train/train_mem.py \
     --deepspeed /datastor1/jiahuikchen/video_llava_encoder/scripts/zero3.json \
     --model_name_or_path ${LLM_VERSION} \
@@ -55,14 +56,16 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node
     --save_steps 3000 \
     --save_total_limit 3 \
     --learning_rate 1e-5 \
+    --weight_decay 0. \
     --warmup_ratio 0.03 \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
+    --model_max_length 32768 \
     --gradient_checkpointing True \
     --dataloader_num_workers 10 \
     --lazy_preprocess True \
     --report_to wandb
-exit 0;
+# exit 0;
 
 # --model_name_or_path ${LLM_VERSION} \
 
