@@ -6,6 +6,7 @@ from llava.utils import rank0_print
 from .clip_encoder import CLIPVisionTower
 from .siglip_encoder import SigLipVisionTower, SigLipImageProcessor
 from .mlcd_encoder import MLCDVisionTower
+from .hf_vision import HFVisionTower
 
 
 class MultiImageEncoderVisionTower(nn.Module):
@@ -39,6 +40,11 @@ class MultiImageEncoderVisionTower(nn.Module):
             # SigLIP 
             self.siglip = SigLipVisionTower("google/siglip-so400m-patch14-384", vision_tower_cfg=vision_tower_cfg, **kwargs)
             self.vision_towers.append(self.siglip)
+
+        if "dino" in vision_tower:
+            # DinoV2
+            self.dino = HFVisionTower("facebook/dinov2-base", args=vision_tower_cfg, **kwargs)
+            self.vision_towers.append(self.dino)
  
 
         # Both CLIP and MLCD use the CLIPImageProcessor, SigLIP can't take the same image dims as input
@@ -49,6 +55,8 @@ class MultiImageEncoderVisionTower(nn.Module):
             self.image_processor = self.clip.image_processor
         elif self.mlcd is not None:
             self.image_processor = self.mlcd.image_processor
+        elif self.dino is not None:
+            self.image_processor = self.dino.image_processor
         else:
             raise RuntimeError("No vision tower was initialized!")
 
@@ -88,6 +96,11 @@ class MultiImageEncoderVisionTower(nn.Module):
         if self.siglip is not None:
             siglip_features = self.siglip(images)
             features.append(siglip_features)
+
+        if self.dino is not None:
+            # DinoV2 works with 384x384 (SigLIPImageProcessor), probably also 336x336
+            dino_features = self.dino(images)
+            features.append(dino_features)
         
         if not features:
             raise RuntimeError("No vision tower is initialized!")

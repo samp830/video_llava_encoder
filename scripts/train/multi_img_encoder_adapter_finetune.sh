@@ -14,14 +14,14 @@ export NCCL_DEBUG=INFO
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # LLM_VERSION="Qwen/Qwen2.5-1.5B-Instruct"
 # VISION_MODEL_VERSION="openai/clip-vit-large-patch14-336"
-VISION_MODEL_VERSION="multi_image_siglip_clip"
+VISION_MODEL_VERSION="multi_image_siglip_dino"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="SigLIP_CLIP_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="SigLIP_DinoV2_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 # export WANDB_NAME=$BASE_RUN_NAME
 # export WANDB_PROJECT=VideoEncoders
@@ -32,12 +32,12 @@ BASE_RUN_NAME="SigLIP_CLIP_multiEncoder_finetune_only-adapters-${VISION_MODEL_VE
 
 # KAREN PATHS
 # CUDA_VISIBLE_DEVICES=4,5,6,7
-torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
+torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29502 \
     ../../llava/train/train_mem.py  \
     --deepspeed $(readlink -f ../zero3.json) \
     --model_name_or_path ${LLM_VERSION} \
     --version ${PROMPT_VERSION} \
-    --data_path /datastor1/jiahuikchen/video_llava_encoder/finetune.yaml \
+    --data_path ../../finetune.yaml \
     --video_folder /data/samyakp/llava_video_data \
     --vision_tower ${VISION_MODEL_VERSION} \
     --mm_tunable_parts "mm_mlp_adapter" \
