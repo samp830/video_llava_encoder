@@ -7,6 +7,7 @@ from .siglip_encoder import SigLipVisionTower
 from .clip_encoder import CLIPVisionTower, CLIPVisionTowerS2
 from .mlcd_encoder import MLCDVisionTower, MLCDVisionTowerS2
 from .multi_img_encoder import MultiImageEncoderVisionTower
+from .vid_embed_encoder import VideoEmbeddingVisionTower
 # from .eva_clip.eva_clip_encoder import EvaClipVisionTower
 # from .dev_eva_clip.eva_vit import EvaViTWrapper
 
@@ -20,6 +21,8 @@ def build_vision_tower(vision_tower_cfg, **kwargs):
             return CLIPVisionTowerS2(vision_tower, args=vision_tower_cfg, **kwargs)
         else:
             return CLIPVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
+    elif "video_embedding" in vision_tower:
+        return VideoEmbeddingVisionTower(vision_tower, vision_tower_cfg, **kwargs)
     elif "multi_image" in vision_tower:
         return MultiImageEncoderVisionTower(vision_tower, vision_tower_cfg, **kwargs) 
     elif "siglip" in vision_tower:

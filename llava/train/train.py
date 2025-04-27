@@ -953,10 +953,11 @@ def preprocess(sources: Sequence[str], tokenizer: transformers.PreTrainedTokeniz
 
 
 class LazySupervisedDataset(Dataset):
-    def __init__(self, data_path: str, tokenizer: transformers.PreTrainedTokenizer, data_args: DataArguments):
+    def __init__(self, data_path: str, tokenizer: transformers.PreTrainedTokenizer, data_args: DataArguments, vision_tower_name: str):
         super(LazySupervisedDataset, self).__init__()
         self.tokenizer = tokenizer
         self.list_data_dict = []
+        self.vision_tower_name = vision_tower_name
 
         # Handle multiple JSON files specified in the data_path
         if "{" in data_path and "}" in data_path:
@@ -1238,8 +1239,17 @@ class LazySupervisedDataset(Dataset):
 
         data_dict["id"] = self.list_data_dict[i].get("id", i)
 
-        # KAREN_TODO: load video encodings based on vision tower,
+        # RELEVANT: Load video encodings if video embedding vision tower is used,
         # do concatenation of embeddings if specified here too 
+        # breakpoint()
+        if "video_embedding" in self.vision_tower_name:
+            # TODO: check for both videoMAE and internVideo2, only internVideo2
+            # ONLY videoMAE is supported for now
+            if "videoMAE" in self.vision_tower_name:
+                data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_embedding", i), map_location="cpu")
+            else:
+                # internVideo2: videoInternVideo_embedding
+                raise ValueError(f"Unsupported video embeddings specified in: {self.vision_tower_name}")
 
         return data_dict
 
@@ -1290,16 +1300,15 @@ class DataCollatorForSupervisedDataset(object):
 
         # KAREN_TODO: use this to include video encodings in instance dict in the returned batch
         # (actual loading done in _get_item)
-        batch['embeddings'] = [torch.ones([1], dtype=torch.float32)]
-        # breakpoint()
+        if "video_embeddings" in instances[0]:
+            batch['video_embeddings'] = [instance["video_embeddings"] for instance in instances]
 
         return batch
 
 
-def make_supervised_data_module(tokenizer: transformers.PreTrainedTokenizer, data_args) -> Dict:
+def make_supervised_data_module(vision_tower_name:str, tokenizer: transformers.PreTrainedTokenizer, data_args) -> Dict:
     """Make dataset and collator for supervised fine-tuning."""
-    # KAREN_TODO: pass in arg to include video embeddings or not here
-    train_dataset = LazySupervisedDataset(tokenizer=tokenizer, data_path=data_args.data_path, data_args=data_args)
+    train_dataset = LazySupervisedDataset(tokenizer=tokenizer, data_path=data_args.data_path, data_args=data_args, vision_tower_name=vision_tower_name)
     data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
     return dict(train_dataset=train_dataset, eval_dataset=None, data_collator=data_collator)
 
@@ -1739,9 +1748,8 @@ def train(attn_implementation=None):
                     if training_args.bf16 and module.weight.dtype == torch.float32:
                         module = module.to(torch.bfloat16)
 
-    # breakpoint()
     # KAREN_TODO: pass in vision tower name... model_args.vision_tower
-    data_module = make_supervised_data_module(tokenizer=tokenizer, data_args=data_args)
+    data_module = make_supervised_data_module(vision_tower_name=model_args.vision_tower,tokenizer=tokenizer, data_args=data_args)
     trainer = LLaVATrainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
 
     if list(pathlib.Path(training_args.output_dir).glob("checkpoint-*")):

@@ -329,51 +329,63 @@ from tqdm import tqdm
 import cv2
 
 
-# INPUT_JSON = "/data/samyakp/llava_video_data/30_60_s_nextqa/30_60_s_nextqa_mc_qa_processed_with_mae_embeddings.json"
-# OUTPUT_JSON = "/data/samyakp/llava_video_data/30_60_s_nextqa/30_60_s_nextqa_mc_qa_processed_all_video_embeddings.json"
-
-INPUT_JSON = "/data/samyakp/llava_video_data/30_60_s_nextqa/30_60_s_nextqa_oe_qa_processed_with_mae_embeddings.json"
-OUTPUT_JSON = "/data/samyakp/llava_video_data/30_60_s_nextqa/30_60_s_nextqa_oe_qa_processed_all_video_embeddings.json"
+DATA_PATH = "/data/samyakp/llava_video_data/30_60_s_nextqa/"
+MC_JSON = "30_60_s_nextqa_mc_qa_processed_with_mae_embeddings.json"
+OE_JSON = "30_60_s_nextqa_oe_qa_processed_with_mae_embeddings.json"
 
 CONFIG_PY = "/data/samyakp/InternVideo/InternVideo2/multi_modality/demo/internvideo2_stage2_config.py"
-OUTPUT_DIR    = "/data/samyakp/llava_video_data/30_60_s_nextqa/internvideo_embeddings"   # where to dump .pt files
+OUTPUT_DIR    = "/data/samyakp/llava_video_data/30_60_s_nextqa/internvideo2_patch_embeddings"   # where to dump .pt files
 DEVICE        = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-with open(INPUT_JSON, "r") as f:
-    records = json.load(f)
+data_files = [DATA_PATH + MC_JSON, DATA_PATH + OE_JSON]
 
-cfg = Config.from_file(CONFIG_PY)
-cfg["TextEncoders"]["bert_large"]["config"] = "/data/samyakp/InternVideo/InternVideo2/multi_modality/configs/config_bert_large.json" 
-cfg = eval_dict_leaf(cfg)
-model, tokenizer = setup_internvideo2(cfg)
-model = model.to(DEVICE).eval()
+# SET OF EXISTING EMBEDDINGS (most entries will NOT have unique videos)
+EXISTING_EMBEDDINGS = set(os.path.join(OUTPUT_DIR, fname) for fname in os.listdir(OUTPUT_DIR))
 
-base_path = "/data/samyakp/llava_video_data/"
-for rec in tqdm(records):
-    video_path = rec["video"]
-    vid_id     = rec["id"]
-    cap = cv2.VideoCapture(base_path + video_path)
-    frames = [f for f in _frame_from_video(cap)]
-    cap.release()
+for data_file in data_files:
+    # Output JSON with emebdding paths
+    new_json = data_file.split(".json")[0] + "_with_internVideo2_patch_embeddings.json"
 
-    T    = getattr(cfg, "num_frames", 8)
-    R    = cfg.model.vision_encoder.clip_input_resolution  # 224
-    vid_t = frames2tensor(frames, fnum=T, target_size=(R, R), device=DEVICE)
+    with open(data_file, "r") as f:
+        records = json.load(f)
 
-    with torch.no_grad():
-        # vid_emb = model.get_vid_feat(vid_t)  # global
-        vid_emb, _ = model.encode_vision(vid_t, test=True) #patch
+    # InternVideo2 init
+    cfg = Config.from_file(CONFIG_PY)
+    cfg["TextEncoders"]["bert_large"]["config"] = "/data/samyakp/InternVideo/InternVideo2/multi_modality/configs/config_bert_large.json" 
+    cfg = eval_dict_leaf(cfg)
+    model, tokenizer = setup_internvideo2(cfg)
+    model = model.to(DEVICE).eval()
 
+    base_path = "/data/samyakp/llava_video_data/"
+    for rec in tqdm(records):
+        video_path = rec["video"]
+        vid_id     = rec["id"]
+        # Keep track of output path to skip already encoded videos
+        internvideo2_embed_path = os.path.join(OUTPUT_DIR, f"{vid_id}_internvideo2.pt")
 
-    vid_emb = vid_emb.squeeze(0).cpu() 
+        # Only embed video if it doesn't already exist
+        if internvideo2_embed_path not in EXISTING_EMBEDDINGS:
+            cap = cv2.VideoCapture(base_path + video_path)
+            frames = [f for f in _frame_from_video(cap)]
+            cap.release()
 
-    out_pt = os.path.join(OUTPUT_DIR, f"{vid_id}_internvideo.pt")
-    torch.save(vid_emb, out_pt)
-    rec["videoInternVideo_embedding"] = out_pt
+            T    = getattr(cfg, "num_frames", 8)
+            R    = cfg.model.vision_encoder.clip_input_resolution  # 224
+            vid_t = frames2tensor(frames, fnum=T, target_size=(R, R), device=DEVICE)
 
-with open(OUTPUT_JSON, "w") as f:
-    json.dump(records, f, indent=2)
+            with torch.no_grad():
+                # vid_emb = model.get_vid_feat(vid_t)  # global
+                vid_emb, _ = model.encode_vision(vid_t, test=True) #patch
+
+            vid_emb = vid_emb.squeeze(0).cpu() 
+
+            torch.save(vid_emb, internvideo2_embed_path)
+
+        rec["internVideo2_patch_embedding"] = out_pt
+
+        with open(new_json, "w") as f:
+            json.dump(records, f, indent=2)
 
 print("Done")

@@ -74,7 +74,7 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
         output_attentions: Optional[bool] = None,
         output_hidden_states: Optional[bool] = None,
         images: Optional[torch.FloatTensor] = None,
-        embeddings: Optional[torch.FloatTensor] = None,
+        video_embeddings: Optional[torch.FloatTensor] = None,
         image_sizes: Optional[List[List[int]]] = None,
         return_dict: Optional[bool] = None,
         modalities: Optional[List[str]] = ["image"],
@@ -85,7 +85,17 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
 
         if inputs_embeds is None:
             # RELEVANT: All vision components called here
-            (input_ids, position_ids, attention_mask, past_key_values, inputs_embeds, labels) = self.prepare_inputs_labels_for_multimodal(input_ids, position_ids, attention_mask, past_key_values, labels, images, modalities, image_sizes)
+            (input_ids, position_ids, attention_mask, past_key_values, inputs_embeds, labels) = self.prepare_inputs_labels_for_multimodal(
+                input_ids, 
+                position_ids, 
+                attention_mask, 
+                past_key_values, 
+                labels, 
+                images, 
+                modalities, 
+                image_sizes, 
+                video_embeddings
+            )
         # breakpoint()
 
         if dpo_forward:

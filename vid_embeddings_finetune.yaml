@@ -1,0 +1,5 @@
+datasets:
+  - json_path: "/data/samyakp/llava_video_data/30_60_s_nextqa/30_60_s_nextqa_mc_qa_processed_with_mae_embeddings.json"
+    sampling_strategy: all
+  - json_path: "/data/samyakp/llava_video_data/30_60_s_nextqa/30_60_s_nextqa_oe_qa_processed_with_mae_embeddings.json"
+    sampling_strategy: all
