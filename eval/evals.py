@@ -108,6 +108,8 @@ def parse_args():
         "multi_image_siglip_mlcd",
         "multi_image_siglip_clip_mlcd",
         "multi_image_siglip_dino",
+        "multi_image_clip_dino",
+        "multi_image_siglip_mlcd"
     ])
 
     p.add_argument("--checkpoint-dir", required=True, default="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin")

@@ -1,13 +1,16 @@
 # List of (CHECKPOINT|VISION_TOWER) pairs
 CHECKPOINTS=(
-  # Apr 27 eval (all image encoders except for CLIP + Dino and SigLIP + MLCD)
-  "/data/jiahuic/vid_llava_checkpoints/max32768_videoLlaVaCLIPBaselinefinetune_only-adapters-openai_clip-vit-base-patch16-Qwen_Qwen2-7B-Instruct/mm_projector.bin|openai/clip-vit-base-patch16"
-  "/data/jiahuic/vid_llava_checkpoints/videoLlaVa14PatchCLIPBaselinefinetune_only-adapters-openai_clip-vit-large-patch14-336-Qwen_Qwen2-7B-Instruct/mm_projector.bin|openai/clip-vit-large-patch14-336"
-  "/data/jiahuic/vid_llava_checkpoints/14PatchCLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_clip_mlcd"
-  "/data/jiahuic/vid_llava_checkpoints/videoLLaVaSigLIPBaselinefinetune_only-adapters-google_siglip-so400m-patch14-384-Qwen_Qwen2-7B-Instruct/mm_projector.bin|google/siglip-so400m-patch14-384"
-  "/data/jiahuic/vid_llava_checkpoints/SigLIP_CLIP_multiEncoder_finetune_only-adapters-multi_image_siglip_clip-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_clip"
-  "/data/jiahuic/vid_llava_checkpoints/SigLIP_CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_siglip_clip_mlcd-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_clip_mlcd"
-  "/data/jiahuic/vid_llava_checkpoints/SigLIP_DinoV2_multiEncoder_finetune_only-adapters-multi_image_siglip_dino-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_dino"
+  # SigLIP + MLCD and CLIP + Dino
+  "/data/jiahuic/vid_llava_checkpoints/SigLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_siglip_mlcd-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_mlcd" 
+  "/data/jiahuic/vid_llava_checkpoints/CLIP_DinoV2_multiEncoder_finetune_only-adapters-multi_image_clip_dino-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_clip_dino" 
+  # # Apr 27 eval (all image encoders except for CLIP + Dino and SigLIP + MLCD)
+  # "/data/jiahuic/vid_llava_checkpoints/max32768_videoLlaVaCLIPBaselinefinetune_only-adapters-openai_clip-vit-base-patch16-Qwen_Qwen2-7B-Instruct/mm_projector.bin|openai/clip-vit-base-patch16"
+  # "/data/jiahuic/vid_llava_checkpoints/videoLlaVa14PatchCLIPBaselinefinetune_only-adapters-openai_clip-vit-large-patch14-336-Qwen_Qwen2-7B-Instruct/mm_projector.bin|openai/clip-vit-large-patch14-336"
+  # "/data/jiahuic/vid_llava_checkpoints/14PatchCLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_clip_mlcd"
+  # "/data/jiahuic/vid_llava_checkpoints/videoLLaVaSigLIPBaselinefinetune_only-adapters-google_siglip-so400m-patch14-384-Qwen_Qwen2-7B-Instruct/mm_projector.bin|google/siglip-so400m-patch14-384"
+  # "/data/jiahuic/vid_llava_checkpoints/SigLIP_CLIP_multiEncoder_finetune_only-adapters-multi_image_siglip_clip-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_clip"
+  # "/data/jiahuic/vid_llava_checkpoints/SigLIP_CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_siglip_clip_mlcd-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_clip_mlcd"
+  # "/data/jiahuic/vid_llava_checkpoints/SigLIP_DinoV2_multiEncoder_finetune_only-adapters-multi_image_siglip_dino-Qwen_Qwen2-7B-Instruct/mm_projector.bin|multi_image_siglip_dino"
 )
 
 DATASETS=(
@@ -37,7 +40,6 @@ for CKPT_PAIR in "${CHECKPOINTS[@]}"; do
       --dataset-name="${DATASET}"
   done
 done
-
 
 
 # CHECKPOINT="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin"
