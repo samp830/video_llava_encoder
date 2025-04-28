@@ -21,6 +21,7 @@ class MultiImageEncoderVisionTower(nn.Module):
         self.clip = None
         self.mlcd = None
         self.siglip = None
+        self.dino = None
 
         rank0_print(f"Loading Multi-Image Encoder: {vision_tower} Vision Tower")
 

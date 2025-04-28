@@ -2,10 +2,10 @@ export OMP_NUM_THREADS=8
 # export NCCL_IB_DISABLE=1
 export NCCL_IB_DISABLE=0
 # export NCCL_IB_GID_INDEX=3
-# # A100s!
-# export NCCL_SOCKET_IFNAME=eth0
-# MLL
-export NCCL_SOCKET_IFNAME=enp226s0f0
+# A100s!
+export NCCL_SOCKET_IFNAME=eth0
+# # MLL
+# export NCCL_SOCKET_IFNAME=enp226s0f0
 export NCCL_DEBUG=INFO
 
 
@@ -14,14 +14,14 @@ export NCCL_DEBUG=INFO
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # LLM_VERSION="Qwen/Qwen2.5-1.5B-Instruct"
 # VISION_MODEL_VERSION="openai/clip-vit-large-patch14-336"
-VISION_MODEL_VERSION="multi_image_siglip_dino"
+VISION_MODEL_VERSION="multi_image_siglip_mlcd"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="SigLIP_DinoV2_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="SigLIP_MLCD_multiEncoder_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
@@ -32,7 +32,7 @@ wandb online
 
 # KAREN PATHS
 # CUDA_VISIBLE_DEVICES=4,5,6,7
-CUDA_VISIBLE_DEVICES=2,3,4 torchrun --nproc_per_node=3 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29502 \
+CUDA_VISIBLE_DEVICES=4,5,6,7 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
     ../../llava/train/train_mem.py  \
     --deepspeed $(readlink -f ../zero3.json) \
     --model_name_or_path ${LLM_VERSION} \
@@ -57,7 +57,7 @@ CUDA_VISIBLE_DEVICES=2,3,4 torchrun --nproc_per_node=3 --nnodes=1 --node_rank=0 
     --gradient_accumulation_steps 1 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 3000 \
+    --save_steps 1000 \
     --save_total_limit 3 \
     --learning_rate 1e-5 \
     --weight_decay 0. \
