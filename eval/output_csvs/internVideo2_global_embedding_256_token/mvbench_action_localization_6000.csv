@@ -1,0 +1,6 @@
+question,model_answer,groundtruth
+During which part of the video does the action 'person sitting on a couch' occur?,Throughout the entire video.,Throughout the entire video.
+Can you identify when the action 'person still smiling' happens in the video?,"To accurately identify when the action 'person still smiling' happens in the video,",Throughout the entire video.
+"In the given video, when does the action 'a person is tidying up the cabinet' take place?",At the beginning of the video.,Throughout the entire video.
+At what moment in the video does the action 'the person takes a lollipop from a box' occur?,"To accurately answer this question, I would need to analyze the video in question.",Throughout the entire video.
+When in the video sequence do we observe the action 'person fixes their hair in a mirror'?,At the beginning of the video.,Throughout the entire video.
