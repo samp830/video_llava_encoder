@@ -1247,8 +1247,13 @@ class LazySupervisedDataset(Dataset):
             # ONLY videoMAE is supported for now
             if "videoMAE" in self.vision_tower_name:
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_embedding", i), map_location="cpu")
+            elif "internVideo2_global" in self.vision_tower_name:
+                # interVideo2 global is torch.Size([768])
+                data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_global_embedding", i), map_location="cpu").unsqueeze(0)
+            elif "internVideo2_patch" in self.vision_tower_name:
+                data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_patch_embedding", i), map_location="cpu")
             else:
-                # internVideo2: videoInternVideo_embedding
+                # TODO: For concat, change to just a variable loading embeddings, then check concat and assign to data_dict["video_embeddings"] after
                 raise ValueError(f"Unsupported video embeddings specified in: {self.vision_tower_name}")
 
         return data_dict

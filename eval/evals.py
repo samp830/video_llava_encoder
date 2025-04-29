@@ -96,7 +96,21 @@ def sample_frames(video_path, max_frames_num):
 
 def parse_args():
     p = argparse.ArgumentParser(description="Run LLaVA-Qwen video VQA on a HuggingFace dataset split")
-    p.add_argument("--vision-tower", required=True, choices=["openai/clip-vit-base-patch16", "multi_image_encoder", "video_embeddings"])
+    p.add_argument("--vision-tower", required=True, choices=[
+        "openai/clip-vit-base-patch16", 
+        "google/siglip-so400m-patch14-384",
+        # "multi_image_encoder", # Can only run from commit 1ce46bb34081f187e1f2107b79656daa54964d5d or earlier
+        "openai/clip-vit-large-patch14-336",
+        "multi_image_clip_mlcd",
+        "multi_image_clip_dino",
+        "multi_image_siglip_clip",
+        "multi_image_siglip_mlcd",
+        "multi_image_siglip_clip_mlcd",
+        "multi_image_siglip_dino",
+        "multi_image_clip_dino",
+        "multi_image_siglip_mlcd",
+        "video_embeddings"
+    ])
     p.add_argument("--checkpoint-dir", required=True, default="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin")
     p.add_argument("--dataset-name", required=True, choices=["mvbench_action_localization", "mvbench_egocentric_navigation", 
                                                             "mvbench_moving_direction", "mvbench_moving_count",
@@ -120,8 +134,13 @@ VIDEO_PATHS = {"mvbench_action_localization": "/data/samyakp/llava_video_data/st
 def main():
     args = parse_args()
 
-    ckpt_base      = args.checkpoint_dir.split("/")[-2].replace("checkpoint-", "")
-    output_csv     = f"output_csvs/{args.vision_tower.replace('/', '_')}_{args.dataset_name}_{ckpt_base}.csv"
+    output_dir = f"output_csvs/{args.vision_tower.replace('/', '_')}"
+    os.makedirs(output_dir, exist_ok=True)
+    if 'checkpoint' in args.checkpoint_dir:
+        ckpt_base      = args.checkpoint_dir.split("/")[-2].replace("checkpoint-", "")
+        output_csv     = f"{output_dir}/{args.dataset_name}_{ckpt_base}.csv"
+    else:
+        output_csv     = f"{output_dir}/{args.dataset_name}.csv"
 
     cfg = LlavaQwenConfig.from_pretrained(PRETRAINED, trust_remote_code=True)
     cfg.model_type               = "llava_qwen"
@@ -219,6 +238,7 @@ def main():
     df = pd.DataFrame(records)
     df.to_csv(output_csv, index=False)
     print(f"Saved {len(df)} entries to {output_csv}")
+
 
 if __name__ == "__main__":
     main()

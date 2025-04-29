@@ -56,10 +56,8 @@ class VideoEmbeddingVisionTower(nn.Module):
 
         self.is_loaded = True
 
-        if self.video_embedding == "videoMAE":
-            self._hidden_size = 768
-        elif self.video_embedding == "internVideo2":
-            self._hidden_size = 4096
+        # Internvideo2 and videoMAE have the same feature dim
+        self._hidden_size = 768
 
     def forward(self, images):
         """
