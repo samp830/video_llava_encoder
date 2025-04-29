@@ -265,8 +265,11 @@ class LlavaMetaForCausalLM(ABC):
     def prepare_inputs_labels_for_multimodal(self, input_ids, position_ids, attention_mask, past_key_values, labels, images, modalities=["image"], image_sizes=None, video_embeddings=None):
         vision_tower = self.get_vision_tower()
         # rank_print(modalities)
-        if vision_tower is None or images is None or input_ids.shape[1] == 1:
-            return input_ids, position_ids, attention_mask, past_key_values, None, labels
+        # if vision_tower is None or images is None or input_ids.shape[1] == 1:
+        #     return input_ids, position_ids, attention_mask, past_key_values, None, labels
+        
+        if vision_tower is None or (images is None and (video_embeddings is None or len(video_embeddings)==0)) or input_ids.shape[1] == 1:
+             return input_ids, position_ids, attention_mask, past_key_values, None, labels
 
         if isinstance(modalities, str):
             modalities = [modalities]
@@ -276,9 +279,11 @@ class LlavaMetaForCausalLM(ABC):
                 raise ValueError("video_embeddings cannot be None when using video_embedding vision tower")
 
         # If we're just using video embeddings, we don't need to encode images
+        # breakpoint()
         if 'video_embedding' in vision_tower.vision_tower_name and vision_tower.use_vision_encoder == False:
                 # Only pass video embeddings through Qwen projector
                 # video_embeddings is a list of the pre-loaded embedding tensor (ONLY WORKS ASSUMING BATCH_SIZE=1)
+                # breakpoint()
                 projected_video_features = self.encode_images(video_embeddings[0], projector_only=True)
                 image_features = [projected_video_features]
         else: 

@@ -130,12 +130,21 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
             )
 
     @torch.no_grad()
+    # def generate(
+    #     self,
+    #     inputs: Optional[torch.Tensor] = None,
+    #     images: Optional[torch.Tensor] = None,
+    #     image_sizes: Optional[torch.Tensor] = None,
+    #     modalities: Optional[List[str]] = ["image"],
+    #     **kwargs,
+    # ) -> Union[GenerateOutput, torch.LongTensor]:
     def generate(
         self,
         inputs: Optional[torch.Tensor] = None,
         images: Optional[torch.Tensor] = None,
         image_sizes: Optional[torch.Tensor] = None,
-        modalities: Optional[List[str]] = ["image"],
+        video_embeddings: Optional[List[torch.Tensor]] = None,
+        modalities: Optional[List[str]] = ["video"],
         **kwargs,
     ) -> Union[GenerateOutput, torch.LongTensor]:
         position_ids = kwargs.pop("position_ids", None)
@@ -143,7 +152,12 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
         if "inputs_embeds" in kwargs:
             raise NotImplementedError("`inputs_embeds` is not supported")
 
-        if images is not None:
+        if video_embeddings is not None:
+            (inputs, position_ids, attention_mask, _, inputs_embeds, _) = self.prepare_inputs_labels_for_multimodal(inputs, position_ids, attention_mask, None, None, images, modalities=modalities,
+                    image_sizes=image_sizes,
+                    video_embeddings=video_embeddings,
+                )
+        elif images is not None:
             (inputs, position_ids, attention_mask, _, inputs_embeds, _) = self.prepare_inputs_labels_for_multimodal(inputs, position_ids, attention_mask, None, None, images, modalities, image_sizes=image_sizes)
         else:
             inputs_embeds = self.get_model().embed_tokens(inputs)
