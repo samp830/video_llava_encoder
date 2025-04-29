@@ -1,92 +1,92 @@
 {
-    "google_siglip-so400m-patch14-384": {
-        "mvbench_action_localization": 0.32,
-        "mvbench_egocentric_navigation": 0.345,
-        "mvbench_moving_count": 0.245,
-        "mvbench_moving_direction": 0.21,
-        "temporalbench_subset": 0.43018867924528303,
-        "vinoground_text": 0.5093023255813953,
-        "vinoground_video": 0.513953488372093,
-        "overall_average": 0.3676349275998244
-    },
-    "multi_image_clip_mlcd": {
-        "mvbench_action_localization": 0.355,
-        "mvbench_egocentric_navigation": 0.305,
-        "mvbench_moving_count": 0.285,
-        "mvbench_moving_direction": 0.22,
-        "temporalbench_subset": 0.38113207547169814,
-        "vinoground_text": 0.49534883720930234,
-        "vinoground_video": 0.5186046511627908,
-        "overall_average": 0.36572650912054155
-    },
-    "multi_image_siglip_clip": {
-        "mvbench_action_localization": 0.325,
-        "mvbench_egocentric_navigation": 0.325,
-        "mvbench_moving_count": 0.28,
-        "mvbench_moving_direction": 0.24,
-        "temporalbench_subset": 0.42641509433962266,
-        "vinoground_text": 0.5232558139534884,
-        "vinoground_video": 0.5511627906976744,
-        "overall_average": 0.38154767128439787
-    },
-    "multi_image_siglip_clip_mlcd": {
-        "mvbench_action_localization": 0.3,
-        "mvbench_egocentric_navigation": 0.31,
-        "mvbench_moving_count": 0.275,
-        "mvbench_moving_direction": 0.22,
-        "temporalbench_subset": 0.3867924528301887,
-        "vinoground_text": 0.48372093023255813,
-        "vinoground_video": 0.5069767441860465,
-        "overall_average": 0.3546414467498276
-    },
-    "multi_image_siglip_dino": {
-        "mvbench_action_localization": 0.395,
-        "mvbench_egocentric_navigation": 0.345,
-        "mvbench_moving_count": 0.26,
-        "mvbench_moving_direction": 0.21,
-        "temporalbench_subset": 0.41509433962264153,
-        "vinoground_text": 0.49534883720930234,
-        "vinoground_video": 0.5023255813953489,
-        "overall_average": 0.37468125117532747
-    },
     "openai_clip-vit-base-patch16": {
-        "mvbench_action_localization": 0.28,
-        "mvbench_egocentric_navigation": 0.325,
-        "mvbench_moving_count": 0.265,
-        "mvbench_moving_direction": 0.215,
-        "temporalbench_subset": 0.42452830188679247,
         "vinoground_text": 0.5,
+        "mvbench_moving_direction": 0.215,
         "vinoground_video": 0.4930232558139535,
+        "temporalbench_subset": 0.42452830188679247,
+        "mvbench_action_localization": 0.28,
+        "mvbench_moving_count": 0.265,
+        "mvbench_egocentric_navigation": 0.325,
         "overall_average": 0.35750736538582084
     },
     "openai_clip-vit-large-patch14-336": {
-        "mvbench_action_localization": 0.295,
-        "mvbench_egocentric_navigation": 0.28,
-        "mvbench_moving_count": 0.26,
-        "mvbench_moving_direction": 0.235,
         "temporalbench_subset": 0.4490566037735849,
-        "vinoground_text": 0.5069767441860465,
+        "mvbench_moving_direction": 0.235,
+        "mvbench_moving_count": 0.26,
         "vinoground_video": 0.5023255813953489,
+        "mvbench_action_localization": 0.295,
+        "vinoground_text": 0.5069767441860465,
+        "mvbench_egocentric_navigation": 0.28,
         "overall_average": 0.3611941327649972
     },
-    "internVideo2_global_embedding_single_token": {
-        "mvbench_action_localization": 0.005,
-        "mvbench_egocentric_navigation": 0.0,
-        "mvbench_moving_direction": 0.0,
-        "mvbench_moving_count": 0.0,
-        "vinoground_text": 0.4744186046511628,
-        "vinoground_video": 0.5465116279069767,
-        "temporalbench_subset": 0.4188679245283019,
-        "overall_average": 0.20639973672663453
+    "multi_image_siglip_dino": {
+        "vinoground_video": 0.5023255813953489,
+        "vinoground_text": 0.49534883720930234,
+        "mvbench_action_localization": 0.395,
+        "temporalbench_subset": 0.41509433962264153,
+        "mvbench_egocentric_navigation": 0.345,
+        "mvbench_moving_count": 0.26,
+        "mvbench_moving_direction": 0.21,
+        "overall_average": 0.37468125117532747
     },
-    "internVideo2_global_embedding_256_token": {
-        "mvbench_action_localization": 0.2,
-        "mvbench_egocentric_navigation": 0.095,
-        "mvbench_moving_direction": 0.01,
-        "mvbench_moving_count": 0.0,
-        "vinoground_text": 0.5023255813953489,
-        "vinoground_video": 0.541860465116279,
-        "temporalbench_subset": 0.4377358490566038,
-        "overall_average": 0.25527455650974734
+    "google_siglip-so400m-patch14-384": {
+        "mvbench_egocentric_navigation": 0.345,
+        "vinoground_text": 0.5093023255813953,
+        "mvbench_moving_count": 0.245,
+        "vinoground_video": 0.513953488372093,
+        "temporalbench_subset": 0.43018867924528303,
+        "mvbench_moving_direction": 0.21,
+        "mvbench_action_localization": 0.32,
+        "overall_average": 0.3676349275998244
+    },
+    "multi_image_siglip_clip_mlcd": {
+        "vinoground_text": 0.48372093023255813,
+        "temporalbench_subset": 0.3867924528301887,
+        "vinoground_video": 0.5069767441860465,
+        "mvbench_moving_count": 0.275,
+        "mvbench_moving_direction": 0.22,
+        "mvbench_action_localization": 0.3,
+        "mvbench_egocentric_navigation": 0.31,
+        "overall_average": 0.35464144674982767
+    },
+    "multi_image_siglip_mlcd": {
+        "vinoground_video": 0.5,
+        "mvbench_moving_count": 0.285,
+        "temporalbench_subset": 0.439622641509434,
+        "mvbench_action_localization": 0.275,
+        "mvbench_moving_direction": 0.215,
+        "mvbench_egocentric_navigation": 0.3,
+        "vinoground_text": 0.5069767441860465,
+        "overall_average": 0.3602284836707829
+    },
+    "multi_image_siglip_clip": {
+        "mvbench_action_localization": 0.325,
+        "vinoground_video": 0.5511627906976744,
+        "vinoground_text": 0.5232558139534884,
+        "mvbench_moving_count": 0.28,
+        "mvbench_moving_direction": 0.24,
+        "temporalbench_subset": 0.42641509433962266,
+        "mvbench_egocentric_navigation": 0.325,
+        "overall_average": 0.381547671284398
+    },
+    "multi_image_clip_mlcd": {
+        "mvbench_moving_direction": 0.22,
+        "mvbench_action_localization": 0.355,
+        "mvbench_moving_count": 0.285,
+        "vinoground_text": 0.49534883720930234,
+        "mvbench_egocentric_navigation": 0.305,
+        "temporalbench_subset": 0.38113207547169814,
+        "vinoground_video": 0.5186046511627908,
+        "overall_average": 0.36572650912054155
+    },
+    "multi_image_clip_dino": {
+        "vinoground_video": 0.5511627906976744,
+        "vinoground_text": 0.49534883720930234,
+        "mvbench_egocentric_navigation": 0.34,
+        "mvbench_moving_direction": 0.205,
+        "temporalbench_subset": 0.44716981132075473,
+        "mvbench_action_localization": 0.315,
+        "mvbench_moving_count": 0.28,
+        "overall_average": 0.37624020560396165
     }
 }

@@ -34,7 +34,7 @@ class VideoEmbeddingVisionTower(nn.Module):
         vido_models = ["videoMAE", "internVideo2"]
         self.video_embedding = None
         # TODO: add option for both (pre-loaded features will be concatenated in dataset class)
-        self.video_embedding = "internvideo2"
+        # self.video_embedding = "internvideo2"
         for model in vido_models:
             if model in vision_tower:
                 self.video_embedding = model
