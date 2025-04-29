@@ -73,7 +73,7 @@ def load_video_frames(
 
 
 # DATA_PATH + MC_JSON, 
-data_files = [DATA_PATH + OE_JSON]
+data_files = [DATA_PATH + OE_JSON, DATA_PATH + MC_JSON]
 # SET OF EXISTING EMBEDDINGS (most entries will NOT have unique videos)
 EXISTING_EMBEDDINGS = set(os.path.join(EMBEDDINGS_OUT_DIR, fname) for fname in os.listdir(EMBEDDINGS_OUT_DIR))
 

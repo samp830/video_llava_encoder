@@ -1241,10 +1241,7 @@ class LazySupervisedDataset(Dataset):
 
         # RELEVANT: Load video encodings if video embedding vision tower is used,
         # do concatenation of embeddings if specified here too 
-        # breakpoint()
         if "video_embedding" in self.vision_tower_name:
-            # TODO: check for both videoMAE and internVideo2, only internVideo2
-            # ONLY videoMAE is supported for now
             if "videoMAE_global" in self.vision_tower_name:
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_global_embedding", i), map_location="cpu")
             elif "videoMAE_patch" in self.vision_tower_name:
@@ -1254,8 +1251,12 @@ class LazySupervisedDataset(Dataset):
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_global_embedding", i), map_location="cpu").unsqueeze(0)
             elif "internVideo2_patch" in self.vision_tower_name:
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_patch_embedding", i), map_location="cpu")
+            elif "concat_global" in self.vision_tower_name:
+                global_internvideo2 = torch.load(self.list_data_dict[i].get("internVideo2_global_embedding", i), map_location="cpu").unsqueeze(0)
+                global_videomae = torch.load(self.list_data_dict[i].get("videoMAE_global_embedding", i), map_location="cpu")
+                data_dict["video_embeddings"] = torch.cat([global_internvideo2, global_videomae], dim=-1)
+            # concat_patch: 1568 tokens for videoMAE, 1025 for videoMAE
             else:
-                # TODO: For concat, change to just a variable loading embeddings, then check concat and assign to data_dict["video_embeddings"] after
                 raise ValueError(f"Unsupported video embeddings specified in: {self.vision_tower_name}")
 
         return data_dict
