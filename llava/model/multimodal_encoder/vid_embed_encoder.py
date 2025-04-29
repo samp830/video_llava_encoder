@@ -30,19 +30,19 @@ class VideoEmbeddingVisionTower(nn.Module):
         self.is_loaded = False
         self.config = vision_tower_cfg
 
-        # All possible video embedding models
-        vido_models = ["videoMAE", "internVideo2"]
-        self.video_embedding = None
-        # TODO: add option for both (pre-loaded features will be concatenated in dataset class)
-        # self.video_embedding = "internvideo2"
-        for model in vido_models:
-            if model in vision_tower:
-                self.video_embedding = model
-                break
-        if self.video_embedding is None:
-            raise ValueError(f"Unknown video embedding for: {vision_tower}")
+        # # All possible video embedding models
+        # video_models = ["videoMAE", "internVideo2"]
+        # self.video_embedding = None
+        # # TODO: add option for both (pre-loaded features will be concatenated in dataset class)
+        # # self.video_embedding = "internvideo2"
+        # for model in video_models:
+        #     if model in vision_tower:
+        #         self.video_embedding = model
+        #         break
+        # if self.video_embedding is None:
+        #     raise ValueError(f"Unknown video embedding for: {vision_tower}")
 
-        rank0_print(f"Loading {self.video_embedding} Embedding Vision Tower")
+        rank0_print(f"Loading {self.vision_tower_name} Embedding Vision Tower")
 
         self.use_vision_encoder = False
         if "_with_" in vision_tower:
@@ -57,8 +57,12 @@ class VideoEmbeddingVisionTower(nn.Module):
 
         self.is_loaded = True
 
-        # Internvideo2 and videoMAE have the same feature dim
-        self._hidden_size = 768
+        # Internvideo2 and videoMAE have the same global feature dim
+        if "internVideo2_global" in self.vision_tower_name or "videoMAE" in self.vision_tower_name:
+            self._hidden_size = 768
+        elif "internVideo2_patch" in self.vision_tower_name:
+            # internVideo2 patch features are size (1025, 1408)
+            self._hidden_size = 1408
 
     def forward(self, images):
         """

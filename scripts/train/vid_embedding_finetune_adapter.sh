@@ -14,14 +14,14 @@ export NCCL_SOCKET_IFNAME=eth0
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # Must be named: "video_embedding_<video model>"
 # <video model> options: videoMAE, internVideo2
-VISION_MODEL_VERSION="video_embedding_internVideo2_global"
+VISION_MODEL_VERSION="video_embedding_internVideo2_patch"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="internVideo2Global_videoLLaVA_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="internVideo2Patch_videoLLaVA_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders

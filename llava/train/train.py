@@ -1245,8 +1245,10 @@ class LazySupervisedDataset(Dataset):
         if "video_embedding" in self.vision_tower_name:
             # TODO: check for both videoMAE and internVideo2, only internVideo2
             # ONLY videoMAE is supported for now
-            if "videoMAE" in self.vision_tower_name:
-                data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_embedding", i), map_location="cpu")
+            if "videoMAE_global" in self.vision_tower_name:
+                data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_global_embedding", i), map_location="cpu")
+            elif "videoMAE_patch" in self.vision_tower_name:
+                data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_patch_embedding", i), map_location="cpu")
             elif "internVideo2_global" in self.vision_tower_name:
                 # interVideo2 global is torch.Size([768])
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_global_embedding", i), map_location="cpu").unsqueeze(0)
