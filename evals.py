@@ -96,11 +96,12 @@ def sample_frames(video_path, max_frames_num):
 
 def parse_args():
     p = argparse.ArgumentParser(description="Run LLaVA-Qwen video VQA on a HuggingFace dataset split")
-    p.add_argument("--vision-tower", required=True, choices=["openai/clip-vit-base-patch16", "multi_image_encoder"])
+    p.add_argument("--vision-tower", required=True, choices=["openai/clip-vit-base-patch16", "multi_image_encoder", "video_embeddings"])
     p.add_argument("--checkpoint-dir", required=True, default="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin")
     p.add_argument("--dataset-name", required=True, choices=["mvbench_action_localization", "mvbench_egocentric_navigation", 
                                                             "mvbench_moving_direction", "mvbench_moving_count",
                                                             "vinoground_textscore_subset", "vinoground_videoscore_subset", "temporalbench_subset"])
+    p.add_argument("--json-path")
     p.add_argument("--num-frames", type=int, default=16)
     return p.parse_args()
 
@@ -148,6 +149,9 @@ def main():
     tokenizer.padding_side = "right"
     processor = model.get_model().get_vision_tower().image_processor
 
+    if "video_embeddings" in args.vision_tower:
+        with open(args.json_path) as f:
+            ds = json.load(f)
 
     ds = load_dataset("Nguyencent/CS381V-hardest-vqa", args.dataset_name)[SPLIT]
 
