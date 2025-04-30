@@ -7,13 +7,10 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 
-# TODO: get all unique videos in MC, check against video_embeddings dir
-# TODO: only encode if it's a new video to save time
 
 DATA_PATH = "/data/samyakp/llava_video_data/30_60_s_nextqa/"
 MC_JSON = "30_60_s_nextqa_mc_qa_processed_all_video_embeddings.json"
 OE_JSON = "30_60_s_nextqa_oe_qa_processed_all_video_embeddings.json"
-
 
 EMBEDDINGS_OUT_DIR = os.path.join(DATA_PATH, "videoMAE_patch_embeddings/")
 DEVICE = "cuda:7"
