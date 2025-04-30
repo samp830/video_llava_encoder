@@ -21,7 +21,7 @@ def build_vision_tower(vision_tower_cfg, **kwargs):
             return CLIPVisionTowerS2(vision_tower, args=vision_tower_cfg, **kwargs)
         else:
             return CLIPVisionTower(vision_tower, args=vision_tower_cfg, **kwargs)
-    elif "video_embedding" in vision_tower:
+    elif "video_embedding" in vision_tower or "internVideo2_global" in vision_tower or "internVideo2_patch"in vision_tower:
         return VideoEmbeddingVisionTower(vision_tower, vision_tower_cfg, **kwargs)
     elif "multi_image" in vision_tower:
         return MultiImageEncoderVisionTower(vision_tower, vision_tower_cfg, **kwargs) 

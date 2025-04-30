@@ -261,6 +261,9 @@ class LlavaMetaForCausalLM(ABC):
         image_feature =  torch.cat((image_feature, self.model.image_newline[:, None, None].expand(*image_feature.shape[:-1], 1).to(image_feature.device)), dim=-1)
         image_feature = image_feature.permute(1, 2, 0).contiguous()
         return image_feature
+    
+    def check_video_embedding(self, vision_tower_name):
+        return ("video_embedding" in vision_tower_name) or ("internVideo2_patch" in vision_tower_name) or ("internVideo2_global" in vision_tower_name)
 
     def prepare_inputs_labels_for_multimodal(self, input_ids, position_ids, attention_mask, past_key_values, labels, images, modalities=["image"], image_sizes=None, video_embeddings=None):
         vision_tower = self.get_vision_tower()
@@ -280,7 +283,7 @@ class LlavaMetaForCausalLM(ABC):
 
         # If we're just using video embeddings, we don't need to encode images
         # breakpoint()
-        if 'video_embedding' in vision_tower.vision_tower_name and vision_tower.use_vision_encoder == False:
+        if self.check_video_embedding(vision_tower.vision_tower_name) and vision_tower.use_vision_encoder == False:
                 # Only pass video embeddings through Qwen projector
                 # video_embeddings is a list of the pre-loaded embedding tensor (ONLY WORKS ASSUMING BATCH_SIZE=1)
                 # breakpoint()
