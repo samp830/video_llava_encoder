@@ -60,8 +60,6 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
     def get_model(self):
         return self.model
 
-    # KAREN_TODO: add argument for video_embedding AND video_and_img_embedding
-    # And pass into prepare_inputs_labels_for_multimodal to handle vision tower
     def forward(
         self,
         input_ids: torch.LongTensor = None,

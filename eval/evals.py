@@ -112,7 +112,12 @@ def parse_args():
         "multi_image_siglip_mlcd",
         "video_embedding",
         "internVideo2_global_embedding",
-        "internVideo2_patch_embedding"
+        "internVideo2_patch_embedding",
+        # "video_embedding_videoMAE_global",
+        "video_embedding_videoMAE",
+        "video_embedding_videoMAE_patch",
+        "video_embedding_concat_global",
+        "video_embedding_concat_patch"
     ])
     p.add_argument("--checkpoint-dir", required=True, default="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin")
     p.add_argument("--dataset-name", required=True, choices=["mvbench_action_localization", "mvbench_egocentric_navigation", 
@@ -146,6 +151,22 @@ def simulate_patches(emb: torch.Tensor, num_patches: int = 100) -> torch.Tensor:
     patches = vec.unsqueeze(0).repeat(num_patches, 1) 
     return patches
 
+def upsample_patch_embeds(internvideo2_emb, videomae_emb):
+    """
+    videoMAE patch feature size: torch.Size([1568, 768])
+    InternVideo2 patch feature size: torch.Size([1025, 1408])
+    
+    Same upsample as in training (see LazySupervisedDataset in train.py)
+    on eval video embeddings
+    """
+    # Upsample InternVideo2 patches to match videoMAE
+    internvideo2_emb_batched = internvideo2_emb.permute(1, 0).unsqueeze(0)  
+    internvideo2_upsample = torch.nn.functional.interpolate(internvideo2_emb_batched, size=videomae_emb.shape[0], mode='linear', align_corners=False)
+    internvideo2_emb = internvideo2_upsample.squeeze(0).permute(1, 0)
+
+    return internvideo2_emb 
+
+
 def main():
     args = parse_args()
 
@@ -158,9 +179,7 @@ def main():
         output_csv     = f"{output_dir}/{args.dataset_name}.csv"
 
     cfg = LlavaQwenConfig.from_pretrained(PRETRAINED, trust_remote_code=True)
-    # if "video" in args.vision_tower.lower():
-    #     vision_tower = "video_embedding"
-    # else:
+    
     vision_tower = args.vision_tower
     cfg.model_type               = "llava_qwen"
     cfg.vision_tower             = vision_tower
@@ -240,11 +259,33 @@ def main():
         # Generate
  
         if "video" in args.vision_tower.lower():
-            # import pdb; pdb.set_trace()
-            emb = torch.load(ex[args.vision_tower], map_location=DEVICE) 
+            if args.vision_tower == "video_embedding_concat_global":
+                # ASSUMES JSON_PATH="/data/samyakp/llava_video_data/eval_videos/${DATASET}_with_internVideo2_global_embeddings.json" is passed in
+                internvid2_global_path = ex["internVideo2_global_embedding"]
+                # Get path of videoMAE embedding of same eval video
+                videomae_global_path = '/' + os.path.join(*internvid2_global_path.split('/')[:-2], *[s.replace('internvideo2', 'videoMAE') for s in internvid2_global_path.split('/')[-2:]])
+                internvid2_embed = torch.load(internvid2_global_path, map_location=DEVICE).unsqueeze(0)
+                videomae_embed = torch.load(videomae_global_path, map_location=DEVICE)
+                emb = torch.cat([internvid2_embed, videomae_embed], dim=-1)
+            elif args.vision_tower == "video_embedding_concat_patch":
+                # ASSUMES JSON_PATH="/data/samyakp/llava_video_data/eval_videos/${DATASET}_with_internVideo2_patch_embeddings.json" is passed in
+                internvid2_patch_path = ex["internVideo2_patch_embedding"] 
+                # Get path of videoMAE embedding of same eval video
+                videomae_patch_path = '/' + os.path.join(*internvid2_patch_path.split('/')[:-2], *[s.replace('internvideo2', 'videoMAE') for s in internvid2_patch_path.split('/')[-2:]])
+                internvid2_embed = torch.load(internvid2_patch_path, map_location=DEVICE)
+                videomae_embed = torch.load(videomae_patch_path, map_location=DEVICE)
+                # Upsample InternVideo2 patch num to videoMAE's patch num
+                upsampled_internvideo2_embed = upsample_patch_embeds(internvid2_embed, videomae_embed)
+                # Concatenate along feature dim
+                emb = torch.cat([upsampled_internvideo2_embed, videomae_embed], dim=-1)
+            elif args.vision_tower == "video_embedding_videoMAE":
+                emb = torch.load(ex["videoMAE_global_embedding"], map_location=DEVICE) 
+            elif args.vision_tower == "video_embedding_videoMAE_patch": 
+                emb = torch.load(ex["videoMAE_patch_embedding"], map_location=DEVICE) 
+            else:
+                emb = torch.load(ex[args.vision_tower], map_location=DEVICE) 
             emb = emb.to(DEVICE)                                      
             emb = emb.half()
-            # breakpoint()
             if emb.ndim == 1:
                 emb = emb.unsqueeze(0)
             num_patches = 1

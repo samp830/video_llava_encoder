@@ -1,0 +1,1721 @@
+question,model_answer,groundtruth
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the f1 race car drives from the lane to the pit before the tires get changed
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the tires get changed before the f1 race car drives from the pit to the lane
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person shifts gears before he maneuvers other car parts
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person maneuvers other car parts before he shifts gears
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a pair of goggles were worn by the scuba diver before they are taken off to be adjusted
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a pair of goggles were taken off by the scuba diver to be adjusted before they are worn
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person water the flowers before they move with the cup
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person move with the cup before they water the flowers
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man used one hand to move the lid from the top of the box to the side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man used one hand to move the lid from the side to the top of the box
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a helicopter is landed on the ground after it was flying in the sky
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a helicopter is flying in the sky after it was landed on the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: sliced strawberries turning into one strawberry
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: one strawberry turning into sliced strawberries
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man steps on a rod attached to the car before he bends down to adjust the rod
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man bends down to adjust the rod attached to the car before he steps on a rod
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person starts spinning the equipment before he/she is realigning the string with it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person is realigning the string with the equipment before he/she starts spinning it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the food was uncovered before it is covered and flipped over and put on top of the stove
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the food was covered and flipped over and put on top of the stove before it is uncovered
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a small drone was on the ground before it is flying into the air under the owner's control
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a small drone was flying into the air before it is on the ground under the owner's control
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the player on the right moves his pawn before the player on the left moves his knight
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the player on the right moves his knight before the player on the left moves his pawn
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man operates on the oil lid before he observes the oil draining out
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man observes the oil draining out before he operates on the oil lid
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man chewed on something before he put some food in his mouth
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man put some food in his mouth before he chewed on something
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the distance between the two surfers increased then decreased
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the distance between the two surfers decreased then increased
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man moves a fake sword from the outside to inside his mouth
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man moves a fake sword from inside his mouth to the outside
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the archer gets in the position ready to shoot before he makes the shot and rearms his bow again
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the archer makes the shot and rearms his bow before he gets in the position ready to shoot again
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the hair stylist washes the woman's hair before he applys shampoo on it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the hair stylist applys shampoo on the woman's hair before he washes it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the surfer surfed straight forward before they did a 360
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the surfer did a 360 before they surfed straight forward
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the cards are shuffled before they are distributed
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the cards are distributed before they are shuffled
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman on the right initiated the hug towards the woman on the left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman on the left initiated the hug towards the woman on the right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a cleaning lady was taking care of the trash bag before removing the bag from a trash bin
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a cleaning lady was removing a trash bag from the trash bin before taking care of the bag
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man lifts some weights before he drops them on the floor
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man drops some weights on the floor before he lifts them
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man goes from the ocean to the beach
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man goes from the beach to the ocean
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a team of cheerleaders were supported by their peers to stand on top of their hands up high before being held by the arms lowered almost to the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a team of cheerleaders were held by the arms lowered almost to the ground before being supported by their peers to stand on top of their hands up high
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pianist flips the sheet before he plays the piano
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pianist plays the piano before he flips the sheet
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the plane taxis to the runway from the gate
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the plane taxis to the gate from the runway
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the lawn mower backs up before it moves forward
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the lawn mower moves forward before it backs up
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the phone was farther away from its owner before it went closer to him
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the phone was closer to its owner before it went farther away from him
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the game went on before the judge whistled
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the judge whistled before the game went on
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chef brings a plate from the side to the center before he pours cake mixture into the plate
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chef pours cake mixture into the plate before he brings a plate from the side to the center
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: water is boiled before it is poured into a container
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: water is poured into a container before it is boiled
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a tattoo artist operates on the client's foot with some machinery before he wipes it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a tattoo artist wipes the client's foot with some machinery before he operates on it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: someone sucks up a yolk out of a bowl before he drops one in another
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: someone drops a yolk in a bowl before he sucks up one out of another
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person tries to stick some clay to the bottom of the cup before he carves it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person carves the bottom of the cup before he tries to stick some clay to it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the dog interacts with its owner before it gets a treat
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the dog gets a treat before it interacts with its owner
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the book was closed before it is read
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the book was read before it is closed
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man throws a hatchet onto the trunk of a tree before he walks towards it and retrieves it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man walks towards a hatchet and retrieves it before he throws it onto the trunk of a tree
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a kid rinses his toothbrush before he brushes his teeth
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a kid brushes his teeth before he rinses his toothbrush
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person was cooking with the pot before he added corn into it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person added corn into the pot before he was cooking with it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl shows a shoe from above before showing the bottom of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl shows the bottom of a shoe before showing it from above
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a soccer player walks on the field and then stops and stretches
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a soccer player stops and stretches and then walks on the field
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the players see their cards before they place their bets
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the players place their bets before they see their cards
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pen is used to write something before it moved from within the scene to out of the scene
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pen moved from out of the scene to within the scene before it is used to write something
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: oil is drained before the cap is loosened
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the cap is loosened before oil is drained
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the old chinese man writes calligraphy on a piece of paper before he dips his brush in the ink
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the old chinese man dips his brush in the ink before he writes calligraphy on a piece of paper
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid swings forward before going backwards
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid swings backwards before going forward
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the food was moved from away from the fire to close to the fire
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the food was moved from close to the fire to away from the fire
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man takes a huge tool from the side to the top of the pencil for sharpening
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man takes a huge tool for sharpening from the top of the pencil to the side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: people were skiing before they are sitting on the ski lift
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: people were sitting on the ski lift before they are skiing
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the submarine is mostly above sea level before it went below sea level
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the submarine is mostly below sea level before it went above sea level
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the garbage truck moves its robot arm before it takes care of the trash
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the garbage truck takes care of the trash before it moves its robot arm
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man spray paints before he shakes the bottle
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man shakes the bottle before he spray paints
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a little girl pretends to talk into the mobile phone before she looks at it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a little girl looks at the mobile phone before she pretends to talk into it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid kneels down to fold clothes before he stands up to put clothes into the dresser
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid stands up to put clothes into the dresser before he kneels down to fold clothes
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the glass shatters before it reaches the floor
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the glass reaches the floor before it shatters
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a boy was moving along with his bike before he had to stand up from his fall
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a boy had to stand up from his fall before he was moving along with his bike
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the watermelon is cut then turned
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the watermelon is turned then cut
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man hits the icy ledge with his pickaxe before he attempts to climb it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man attempts to climb the icy ledge before he hits it with his pickaxe
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the fisherman was pouring fish into a bucket from a tube before placing the tube back in the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the fisherman was placing the tube back in the ground before pouring fish into a bucket from a tube
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person poured some rice into a sock before they shook it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person shook a sock before they poured some rice into it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman walks away from the camera towards the vacuum before she vacuum cleans the floor
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman vacuum cleans the floor before she walks away from the vacuum towards the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a skydiver flys out of the plane before a parachute is opened
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a parachute is opened before a skydiver flys out of the plane
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a baby had his straw cup on his lap before he takes it up towards his mouth to drink from it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a baby takes his straw cup up towards his mouth to drink from it before he had it on his lap
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chef pours eggs into the battered butter before he grabs a bowl of them
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chef grabs a bowl of eggs before he pours them into the battered butter
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the marshmellow is on fire above the stove before it is taken off the stove and not on fire
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the marshmellow is taken off the stove and not on fire before it is on fire above the stove
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person first uses a needle to poke the yarn through the fabric before he ties a knot with the yarn
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person first ties a knot with the yarn before he uses a needle to poke the yarn through the fabric
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pancake is moved horizontally before being flipped vertically
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pancake is flipped vertically before being moved horizontally
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: cookies are moved to the oven from the outside
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: cookies are moved to the outside from the oven
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a crane loaded the unloaded truck with a semi-trailer
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a crane unloaded the loaded truck with a semi-trailer
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the player on the left spends more time thinking before making a move than the player on the right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the player on the right spends more time thinking before making a move than the player on the left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a biker rides past an obstacle tied to the pole on the right first then one attached to the left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a biker rides past an obstacle tied to the pole on the left first then one attached to the right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the food is transferred from the stove to the plate
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the food is transferred from the plate to the stove
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a piece of cloth is attached onto the hook before string is tied onto it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: string is tied onto the hook before a piece of cloth is attached onto it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the athlete skis downhill before he jumps in the air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the athlete jumps in the air before he skis downhill
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person takes a piece of contact lens from the container before he puts one into his eye
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person puts a piece of contact lens into his eye before he takes one from the container
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman slices a carrot before she has to pick up a fallen piece
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman has to pick up a fallen piece before she slices a carrot
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: people were playing mahjong and going through their pieces before they shove their pieces all inside the table to shuffle them
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: people shove their pieces all inside the table to shuffle them before they were playing mahjong and going through their pieces
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man is climbing from the bottom of the rope to the top of the rope
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man is climbing from the top of the rope to the bottom of the rope
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a lady irons the tablecloth before she folds it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a lady folds the tablecloth before she irons it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: somebody is using a marker to write on a piece of paper before picking up the paper and examining it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: somebody is picking up a piece of paper and examining it before using a marker to write on the paper
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man tries to tie the knot before he tries to untie it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man tries to untie the knot before he tries to tie it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the f1 driver drives from the pit to the pit lane
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the f1 driver drives from the pit lane to the pit
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person throws axes onto a trunk before a person goes to the trunk to retrieve the axes
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person goes to the trunk to retrieve the axes before a person throws axes onto a trunk
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bus was driving before people were getting on and off the bus
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: people were getting on and off the bus before the bus was driving
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl scoops some of the cake before she eats it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl eats some of the cake before she scoops it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the plane enters the hangar from the runway
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the plane enters the runway from the hangar
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a little girl is holding a yellow balloon in her hand before she starts to fill it up with her nose
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a little girl starts to fill a yellow balloon up with her nose before she is holding it in her hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the hand was not on the inner wheel before it is on
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the hand was on the inner wheel before it is not on
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the watermelon is cut into pieces before it is put in a bowl
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the watermelon is put in a bowl before it is cut into pieces
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the ball was on the ground before it was in the boy's hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the ball was in the boy's hand before it was on the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the skydiver was close to the camera before they are far away
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the skydiver was far away before they are close to the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a train can be seen driving into the open air from the tunnel
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a train can be seen driving into the tunnel from the open air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man drains the wine glass after he fills it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man fills the wine glass after he drains it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person spin the yarn before they stop and examine the yarn
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person stop and examine the yarn before they spin the yarn
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the shot glass was held below his body before a shot was drank from it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a shot was drank from the shot glass before it was held below his body
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man wipes the window before he shows how dirty the paper towel becomes
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man shows how dirty the paper towel becomes before he wipes the window
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man bikes from afar to closer to the camera before he turns around
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man bikes from closer to the camera to afar before he turns around
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a photographer is seen taking pictures of a well-dressed man before she is out of the scene
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a photographer is out of the scene before she is seen taking pictures of a well-dressed man
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman cuts the sunflower so that it is short enough before she puts it in the vase
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman puts the sunflower in the vase before she cuts it so that it is short enough
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the waterskiier moves from the left to the right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the waterskiier moves from the right to the left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the girls complete the hopskotch from the end to the start
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the girls complete the hopskotch from the start to the end
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman was surfing downwards before the water pushes the woman upward
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the water pushes the woman upward before the woman was surfing downwards
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the tire on the car was rolled onto the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the tire on the ground was rolled onto the car
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man takes a sip out of the beer before he stops for the aftertaste of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man stops for the aftertaste of the beer before he takes a sip out of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the weight lifter moves a heavy bar bell from the ground to above his body
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the weight lifter moves a heavy bar bell from above his body to the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the eggs were in the air before it is being cooked in a pan
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the eggs were being cooked in a pan before it is in the air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man shoves plaster onto his shovel before he fills a gap on the wall with some of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man fills a gap on the wall with plaster before he shoves some of it onto his shovel
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person folds the origami before he/she creases it with strength
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person creases the origami with strength before he/she folds it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a guy grabs a brick from the side before he lays the brick onto the wall
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a guy lays the brick onto the wall before he grabs a brick from the side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a motorcycle drives onto the driveway from the road
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a motorcycle drives onto the road from the driveway
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bike went inside a corridor from outside
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bike went outside from inside a corridor
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man uses the machine from right to left before going from left to right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man uses the machine from left to right before going from right to left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: milk is poured into the bowl before cereal
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: cereal is poured into the bowl before milk
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman puts one of her pieces into the deck before she takes another piece in
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman takes another piece in before she puts one of her pieces into the deck
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man digs out mud before he places blue tubes inside the hole on the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man places blue tubes inside the hole on the ground before he digs out mud
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman bangs a cellphone against a desk and then picks it up off of the floor
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman picks up a cellphone off of the floor and then bangs it against a desk
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person was riding their snowmobile towards the camera before they are facing away from the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person was riding their snowmobile away from the camera before they are facing towards the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the string is tied onto the fishing hook from right to left before going from left to right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the string is tied onto the fishing hook from left to right before going from right to left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the car was going backward instead of forward
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the car was going forward instead of backward
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a boy was cooking with a pan on a stove before he flips a pancake with the pan away from the stove
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a boy flips a pancake with the pan away from the stove before he was cooking with a pan on a stove
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the player on the left moves the chess first before the player on the right moves his
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the player on the right moves the chess first before the player on the left moves his
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the waterskiier first moves from left to right then from right to left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the waterskiier first moves from right to left then from left to right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person recolors a book's binder before he wipes it down
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person wipes a book's binder down before he recolors it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a piece of paper was taken from outside the machine and put inside the machine before a person interacts with the machine
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person interacts with the machine before a piece of paper was taken from inside the machine and put outside the machine
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: tea leaves were first stirred by hand then rubbed against each other in a pair of hands
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: tea leaves were first rubbed against each other in a pair of hands then stirred by hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a shoe shiner polishes the right shoe before the left shoe
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a shoe shiner polishes the left shoe before the right shoe
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man wipes the duct from left to right before he wipes it backwards
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man wipes the duct from right to left before he wipes it backwards
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman stirs in the cup before she adds black pepper powder
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman adds black pepper powder before she stirs in the cup
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man ice skates before he almost falls and grabs the wall
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man almost falls and grabs the wall before he ice skates
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bartender pours wine from the bottle into a measuring cup before pouring it from the cup into a glass
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bartender pours wine from a measuring cup into a glass before pouring it from the bottle into the cup
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the basketball is moved along the field before it is shot
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the basketball is shot before it is moved along the field
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man smokes before he coughs loudly
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man coughs loudly before he smokes
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man applies some soap to a sponge and then uses it to clean a pool
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man uses a sponge to clean a pool and then applies some soap to it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person brushes his teeth before a person opens his mouth to see his clean teeth
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person opens his mouth to see his clean teeth before a person brushes his teeth
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person moves the pan of cookies from inside the oven to the halfway out before she presses the cookies with a spatula
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person presses the cookies with a spatula before she moves the pan of cookies from halfway out the oven to the inside
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a train was moving before it is stopped at the station
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a train was stopped at the station before it is moving
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the young boy dips the bubble wand in the special liquid before he blows it to make bubbles
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the young boy blows the bubble wand to make bubbles before he dips it in the special liquid
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a team of dog sleds move in a curve from the left to the right before they move from the right to the left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a team of dog sleds move in a curve from the right to the left before they move from the left to the right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: dough is covering up the flour
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: flour is covering up the dough
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl was in front of a toy refridgerator before she went behind it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl was behind a toy refridgerator before she went in front of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman tapes the gift wrapping before she grabs with her hands an opening in the wrapping
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman grabs with her hands an opening in the gift wrapping before she tapes the wrapping
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a kid is seen being put into a bag before an adult carries the bag across the flood
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: an adult carries the bag across the flood before a kid is seen being put into a bag
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the fidget spinner is spinning before it is stopped and is not in view
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the fidget spinner is not in view and stopped before it is spinning
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man was installing a lego with the main structure laying flat but then made it stood up vertically
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man was installing a lego with the main structure stood up vertically but then made it laying flat
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person skates from the closer end of the arena to the farther end
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person skates from the farther end of the arena to the closer end
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man on the left speaks first then the man on the right speaks
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man on the right speaks first then the man on the left speaks
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: only the grey back of the electronic gadget can be seen before a guy shows us the green front of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a guy shows us the green front of the electronic gadget before only the grey back of it can be seen
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man swims from right to left before he flips over and turns around
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man swims from left to right before he flips over and turns around
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the knife was used to cut the insides of a pumpkin before it is outside the pumpkin
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the knife was outside the pumpkin before it is used to cut the insides of a pumpkin
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chef frosts the cake before she scoops another full spoon of cream onto the cake
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chef scoops another full spoon of cream onto the cake before she frosts the cake
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the window cleaner is cleaning the top row of the window cells before he moves to the middle row
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the window cleaner is cleaning the middle row of the window cells before he moves to the top row
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the dog is out of camera view before it walks into it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the dog walks into camera view before it is out of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man stops and then he is riding forward a very small tractor
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man is riding forward a very small tractor and then he stops
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the young boy covers his face with the welding mask from the top of his head before he welds
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the young boy welds before he covers the top of his head with the welding mask from his face
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a toddler has his right foot outside the shoe before he tries to fit it back into the shoe
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a toddler tries to fit his right foot back into the shoe before he has it outside the shoe
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a car driving from land to water
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a car driving from water to land
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: glue is applied before a button is put onto a snowman
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a button is put onto a snowman before glue is applied
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person folds a white napkin before he/she flattens it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person flattens a white napkin before he/she folds it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a bartender plays around both the bottle and the mixing cup by throwing them around before he tries to balance the bottle with one hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a bartender tries to balance the bottle with one hand before he plays around both the bottle and the mixing cup by throwing them around
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the waterskiier has both hands on the handle before he raises one hand in the air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the waterskiier raises one hand in the air before he has both hands on the handle
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the human in the plastic bag moves from the farther side of the bank to the closer side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the human in the plastic bag moves from the closer side of the bank to the farther side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a biker stopped as he revs his engine before he moves up a few inches
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a biker moves up a few inches before he stopped as he revs his engine
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person skates away from the camera before he turns back towards the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person skates towards the camera before he turns back away from the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: flowers were taken away from being attached to the stem to the table
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: flowers were taken away from the table to being attached to the stem
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a cargo ship is entering into the sea from the port
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a cargo ship is entering into the port from the sea
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man was standing on top of an ice sheet before he is swimming in the ice cold water
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man was swimming in the ice cold water before he is standing on top of an ice sheet
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bike went from the ground to the air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the bike went from the air to the ground
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the lady rips a page off a magazine before she turns the page
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the lady turns the page before she rips a page off a magazine
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a guy walks away from the camera to a machine before he repeatedly hits it with a hammer
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a guy repeatedly hits a machine with a hammer before he walks away from it to the camera
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a rocket is thrusting itself from upstraight in the landing zone into the sky
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a rocket is thrusting itself from the sky into upstraight in the landing zone
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a child moves his piece on a monopoly board before he rolls the dice
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a child rolls the dice before he moves his piece on a monopoly board
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl jumps and sits on a sand castle before she stands up
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a girl stands up before she jumps and sits on a sand castle
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person makes a tie between the balloons before he folds them together
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person folds the balloons together before he makes a tie between them
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the plate of gravel is dipped in water before it is shaked
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the plate of gravel is shaked before it is dipped in water
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the ballet dancers on the right move while the ones on the left stands still
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the ballet dancers on the left move while the ones on the right stands still
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the solo ended before the chorus
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the chorus ended before the solo
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man throws darts to the board before he picks them up from it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man picks darts up from the board before he throws them to it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the boy tries to ride the unicycle outside of the garage but he turned back inside again
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the boy tries to ride the unicycle inside of the garage but he turned back outside again
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man puts bottles onto the conveyor belt before he presses some buttons
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man presses some buttons before he puts bottles onto the conveyor belt
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the pan is being moved along the sink for rinsing before the person shakes it in the water to filter something
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the person shakes the pan in the water to filter something before it is being moved along the sink for rinsing
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man was reading a piece of newspaper with the paper put on the podium before it is held in his hands
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man was reading a piece of newspaper with the paper held in his hands before it is put on the podium
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the fridge door was opened then closed by the boy
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the fridge door was closed then opened by the boy
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman dips the meat into the hot pot before she holds it in the air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman holds the meat in the air before she dips it into the hot pot
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman is in a stand-up position after she exercises her middle split
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman exercises her middle split after she is in a stand-up position
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid takes the food tray from the table to the tray area
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid takes the food tray from the tray area to the table
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the knife was on a piece of green cloth before it was used by a person to cut a mushroom
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the knife was used by a person to cut a mushroom before it was on a piece of green cloth
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid on the left throws a water balloon at the kid on the right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the kid on the right throws a water balloon at the kid on the left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a chef adds more food to the pan before he stir frys in it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a chef stir frys in the pan before he adds more food to it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man installs a device on the tire before he stands up to grab one
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man stands up to grab a device before he installs one on the tire
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the surfer was laying flat on the surfboard before he stands up and surfs
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the surfer stands up and surfs before he was laying flat on the surfboard
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a boy grabs some dirt from a bag and then puts dirt around a plant
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a boy puts dirt around a plant and then grabs some dirt from a bag
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman takes some mahjong pieces from the deck before she arranges the pieces
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman arranges the mahjong pieces before she takes some pieces from the deck
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman carefully inserts a leaf into the bouquet of roses in a vase before she reaches out to the desk for another leaf
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a woman reaches out to the desk for another leaf before she carefully inserts a leaf into the bouquet of roses in a vase
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the car was being driven outside before it is parked in a parking lot
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the car was parked in a parking lot before it is being driven outside
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person tries to open a lid with his left hand before he uses his right hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person tries to open a lid with his right hand before he uses his left hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: bob ross brushes the canvas with some paint before he dips his brush on a palette
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",A.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: bob ross dips his brush on a palette with some paint before he brushes the canvas
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person was standing in the elevator waiting area before he/she is inside an elevator
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person was standing inside an elevator before he/she is in the elevator waiting area
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the power air brush moves from down to up first then in reverse
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the power air brush moves from up to down first then in reverse
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a pregnant woman looks to her right before looking to her left
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a pregnant woman looks to her left before looking to her right
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman demonstrates how to use the library scanner by moving the book from the side to the scanning area
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman demonstrates how to use the library scanner by moving the book from the scanning area to the side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a young girl folds a piece of clothing before she puts one in the suitcase
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a young girl puts a piece of clothing in the suitcase before she folds one
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man tried to take the mail from his hands into the blue mailbox
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man tried to take the mail from the blue mailbox into his hands
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person moonwalks from the left to the right of the camera view
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person moonwalks from the right to the left of the camera view
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a little girl takes a bite off of the food and then holds a piece of it in her hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a little girl holds a piece of the food in her hand and then takes a bite off of it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man opened the closed secret stash next to a river
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man closed the opened secret stash next to a river
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman folds the gift wrap before she tapes it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the woman tapes the gift wrap before she folds it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man moves some dough from the side to the center dish before he carves patterns into it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a man carves patterns into some dough before he moves it from the center dish to the side
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the submarine changes its position from being mostly above water to being submerged underwater
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the submarine changes its position from being mostly submerged underwater to being above water
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: an automatic packing machine seals a bag before a bag moves on the conveyer belt
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a bag moves on the conveyer belt before an automatic packing machine seals a bag
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: silverware unwrapped are being rolled into a napkin
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: silverware rolled into a napkin are being unwrapped
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a bartender holds a bottle on the back of his hand before the bottle is being flipped in the air
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a bottle is being flipped in the air before a bartender holds the bottle on the back of his hand
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the wrapped gift is being unwrapped
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the unwrapped gift is being wrapped
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person brings the cattle to the auctioneers before he chases them away
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: a person chases the cattle away before he brings them to the auctioneers
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,A
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the man smashes the apple before it rolls away and he has to put it back
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B
+"Which video segment matches this caption? Note: The video contains two segments separated by a 2-second black frame. Caption: the apple rolls away and the man has to put it back before he smashes it
+A. First segment (before black frame)
+B. Second segment (after black frame)
+Answer with the option's letter from the given choices directly.",B.,B

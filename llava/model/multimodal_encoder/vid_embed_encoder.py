@@ -29,22 +29,22 @@ class VideoEmbeddingVisionTower(nn.Module):
         super().__init__()
 
         self.vision_tower_name = vision_tower
-        # Validate the vision tower name/string
-        options = [
-            "concat_global",
-            "concat_patch",
-            "internVideo2_global",
-            "videoMAE_global",
-            "videoMAE_patch",
-            "internVideo2_patch"
-        ]
+        # # Validate the vision tower name/string
+        # options = [
+        #     "concat_global",
+        #     "concat_patch",
+        #     "internVideo2_global",
+        #     "videoMAE_global",
+        #     "videoMAE_patch",
+        #     "internVideo2_patch"
+        # ]
 
-        count = sum(opt in self.vision_tower_name for opt in options)
-        if count != 1:
-            raise ValueError(
-                f"Exactly one of {options} must be present in vision_tower_name, "
-                f"but found {count} in '{self.vision_tower_name}'."
-            )
+        # count = sum(opt in self.vision_tower_name for opt in options)
+        # if count != 1:
+        #     raise ValueError(
+        #         f"Exactly one of {options} must be present in vision_tower_name, "
+        #         f"but found {count} in '{self.vision_tower_name}'."
+        #     )
 
         self.is_loaded = False
         self.config = vision_tower_cfg
