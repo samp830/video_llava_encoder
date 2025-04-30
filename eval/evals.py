@@ -110,9 +110,9 @@ def parse_args():
         "multi_image_siglip_dino",
         "multi_image_clip_dino",
         "multi_image_siglip_mlcd",
-        "internVideo2",
         "video_embedding",
-        "internVideo2_global_embedding"
+        "internVideo2_global_embedding",
+        "internVideo2_patch_embedding"
     ])
     p.add_argument("--checkpoint-dir", required=True, default="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin")
     p.add_argument("--dataset-name", required=True, choices=["mvbench_action_localization", "mvbench_egocentric_navigation", 
@@ -136,22 +136,14 @@ VIDEO_PATHS = {"mvbench_action_localization": "/data/samyakp/llava_video_data/st
 
 def simulate_patches(emb: torch.Tensor, num_patches: int = 100) -> torch.Tensor:
     """
-    emb: your loaded embedding tensor of shape
-         • [C]
-         • [1, C]
-         • [N, C]
-         • [1, N, C]
-         etc.
     Returns a tensor of shape [num_patches, C], where each row is the same vector.
     """
-    # collapse to a single [C] vector
     if emb.ndim == 1:
         vec = emb
     else:
-        vec = emb.reshape(-1, emb.shape[-1])[0]  # → [C]
+        vec = emb.reshape(-1, emb.shape[-1])[0] 
 
-    # tile into [num_patches, C]
-    patches = vec.unsqueeze(0).repeat(num_patches, 1)  # → [num_patches, C]
+    patches = vec.unsqueeze(0).repeat(num_patches, 1) 
     return patches
 
 def main():
@@ -166,10 +158,10 @@ def main():
         output_csv     = f"{output_dir}/{args.dataset_name}.csv"
 
     cfg = LlavaQwenConfig.from_pretrained(PRETRAINED, trust_remote_code=True)
-    if "video" in args.vision_tower.lower():
-        vision_tower = "video_embedding"
-    else:
-        vision_tower = args.vision_tower
+    # if "video" in args.vision_tower.lower():
+    #     vision_tower = "video_embedding"
+    # else:
+    vision_tower = args.vision_tower
     cfg.model_type               = "llava_qwen"
     cfg.vision_tower             = vision_tower
     cfg.mm_use_im_patch_token    = False
@@ -249,26 +241,14 @@ def main():
  
         if "video" in args.vision_tower.lower():
             # import pdb; pdb.set_trace()
-            # emb = torch.tensor(ex[args.vision_tower], device=DEVICE)   # shape (L, V)
-            #emb = torch.load(ex[args.vision_tower], map_location=DEVICE)  # 
-            emb = torch.load(ex[args.vision_tower], map_location=DEVICE)       # (L, V), float32
-            emb = emb.to(DEVICE)                                       # move to GPU/CPU
+            emb = torch.load(ex[args.vision_tower], map_location=DEVICE) 
+            emb = emb.to(DEVICE)                                      
             emb = emb.half()
+            # breakpoint()
             if emb.ndim == 1:
                 emb = emb.unsqueeze(0)
-            num_patches = 256
-            emb = simulate_patches(emb, num_patches)
-
-            # Now call generate and inspect inputs_embeds:
-            # with torch.no_grad():
-            #     _, pos, attn, _, inputs_embeds, _ = \
-            #     model.prepare_inputs_labels_for_multimodal(
-            #         input_ids, None, None, None, None,
-            #         images=None,
-            #         video_embeddings=[emb],
-            #         modalities=["video_embedding"],
-                #)
-            # print("== Inputs embeds shape ==", inputs_embeds.shape)
+            num_patches = 1
+            # emb = simulate_patches(emb, num_patches)
             out_ids = model.generate(
                 inputs            = input_ids,
                 images      = None,
