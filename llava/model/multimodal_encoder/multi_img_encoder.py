@@ -99,7 +99,7 @@ class MultiImageEncoderVisionTower(nn.Module):
             features.append(siglip_features)
 
         if self.dino is not None:
-            # DinoV2 works with 384x384 (SigLIPImageProcessor), probably also 336x336
+            # DinoV2 works with 384x384 (SigLIPImageProcessor) and 336x336
             dino_features = self.dino(images)
             features.append(dino_features)
         

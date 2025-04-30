@@ -14,14 +14,14 @@ export NCCL_SOCKET_IFNAME=eth0
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # Must be named: "video_embedding_<video model>"
 # <video model> options: videoMAE, internVideo2
-VISION_MODEL_VERSION="video_embedding_concat_global"
+VISION_MODEL_VERSION="video_embedding_concat_patch"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="internVideo2videoMAE_Global_videoLLaVA_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="internVideo2videoMAE_Patch_videoLLaVA_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
@@ -32,7 +32,7 @@ wandb online
 
 # KAREN PATHS
 # CUDA_VISIBLE_DEVICES=5,6,7
-torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
+torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29501 \
     ../../llava/train/train_mem.py  \
     --deepspeed $(readlink -f ../zero3.json) \
     --model_name_or_path ${LLM_VERSION} \
