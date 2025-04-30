@@ -16,8 +16,10 @@ class VideoEmbeddingVisionTower(nn.Module):
         VisionTower that goes with pre-computed video embeddings.
         Video embedding tensors are loaded in _get_item() in LazySupervisedDataset (llava/train/train.py)
 
-        vision_tower: must be a string of the format:
-            "video_embedding_<video model>" or "video_embedding_<video model>_with_<image_encoder>"
+        vision_tower: must be a string formatted like below
+            "video_embedding_<video model>" or 
+            "video_embedding_<video model>_with_<image_encoder>" or
+            "video_embedding_concat_<global or patch>
             <video model> options: [videoMAE, internVideo2]
 
             TO ADDITIONALLY USE IMAGE ENCODER(S) AND CONCAT VIDEO + IMAGE FEATURES
@@ -27,6 +29,23 @@ class VideoEmbeddingVisionTower(nn.Module):
         super().__init__()
 
         self.vision_tower_name = vision_tower
+        # Validate the vision tower name/string
+        options = [
+            "concat_global",
+            "concat_patch",
+            "internVideo2_global",
+            "videoMAE_global",
+            "videoMAE_patch",
+            "internVideo2_patch"
+        ]
+
+        count = sum(opt in self.vision_tower_name for opt in options)
+        if count != 1:
+            raise ValueError(
+                f"Exactly one of {options} must be present in vision_tower_name, "
+                f"but found {count} in '{self.vision_tower_name}'."
+            )
+
         self.is_loaded = False
         self.config = vision_tower_cfg
 
@@ -58,7 +77,11 @@ class VideoEmbeddingVisionTower(nn.Module):
         self.is_loaded = True
 
         # Internvideo2 and videoMAE have the same global feature dim
-        if "internVideo2_global" in self.vision_tower_name or "videoMAE" in self.vision_tower_name:
+        if "concat_global" in self.vision_tower_name:
+            self._hidden_size = 768 * 2
+        elif "concat_patch" in self.vision_tower_name:
+            self._hidden_size = 768 + 1408 
+        elif "internVideo2_global" in self.vision_tower_name or "videoMAE" in self.vision_tower_name:
             self._hidden_size = 768
         elif "internVideo2_patch" in self.vision_tower_name:
             # internVideo2 patch features are size (1025, 1408)

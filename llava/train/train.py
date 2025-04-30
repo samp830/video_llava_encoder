@@ -1241,10 +1241,7 @@ class LazySupervisedDataset(Dataset):
 
         # RELEVANT: Load video encodings if video embedding vision tower is used,
         # do concatenation of embeddings if specified here too 
-        # breakpoint()
         if "video_embedding" in self.vision_tower_name:
-            # TODO: check for both videoMAE and internVideo2, only internVideo2
-            # ONLY videoMAE is supported for now
             if "videoMAE_global" in self.vision_tower_name:
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_global_embedding", i), map_location="cpu")
             elif "videoMAE_patch" in self.vision_tower_name:
@@ -1254,8 +1251,23 @@ class LazySupervisedDataset(Dataset):
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_global_embedding", i), map_location="cpu").unsqueeze(0)
             elif "internVideo2_patch" in self.vision_tower_name:
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("internVideo2_patch_embedding", i), map_location="cpu")
+            elif "concat_global" in self.vision_tower_name:
+                global_internvideo2 = torch.load(self.list_data_dict[i].get("internVideo2_global_embedding", i), map_location="cpu").unsqueeze(0)
+                global_videomae = torch.load(self.list_data_dict[i].get("videoMAE_global_embedding", i), map_location="cpu")
+                data_dict["video_embeddings"] = torch.cat([global_internvideo2, global_videomae], dim=-1)
+            elif "concat_patch" in self.vision_tower_name:
+                # videoMAE patch feature size: torch.Size([1568, 768])
+                # InternVideo2 patch feature size: torch.Size([1025, 1408])
+                patch_internvideo2 = torch.load(self.list_data_dict[i].get("internVideo2_patch_embedding", i), map_location="cpu")
+                patch_videomae = torch.load(self.list_data_dict[i].get("videoMAE_patch_embedding", i), map_location="cpu")
+                # Upsample InternVideo2 patches to match videoMAE
+                patch_internvideo2_batched = patch_internvideo2.permute(1, 0).unsqueeze(0)  
+                patch_internvideo2_upsample = torch.nn.functional.interpolate(patch_internvideo2_batched, size=patch_videomae.shape[0], mode='linear', align_corners=False)
+                patch_internvideo2 = patch_internvideo2_upsample.squeeze(0).permute(1, 0)
+
+                # Concat features after both sequence dims are 1568
+                data_dict["video_embeddings"] = torch.cat([patch_internvideo2, patch_videomae], dim=-1)
             else:
-                # TODO: For concat, change to just a variable loading embeddings, then check concat and assign to data_dict["video_embeddings"] after
                 raise ValueError(f"Unsupported video embeddings specified in: {self.vision_tower_name}")
 
         return data_dict
