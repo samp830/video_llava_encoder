@@ -1241,7 +1241,7 @@ class LazySupervisedDataset(Dataset):
 
         # RELEVANT: Load video encodings if video embedding vision tower is used,
         # do concatenation of embeddings if specified here too 
-        if "video_embedding" in self.vision_tower_name:
+        if "video" in self.vision_tower_name.lower():
             if "videoMAE_global" in self.vision_tower_name:
                 data_dict["video_embeddings"] = torch.load(self.list_data_dict[i].get("videoMAE_global_embedding", i), map_location="cpu")
             elif "videoMAE_patch" in self.vision_tower_name:

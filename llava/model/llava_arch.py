@@ -263,7 +263,7 @@ class LlavaMetaForCausalLM(ABC):
         return image_feature
     
     def check_video_embedding(self, vision_tower_name):
-        return ("video_embedding" in vision_tower_name) or ("internVideo2_patch" in vision_tower_name) or ("internVideo2_global" in vision_tower_name)
+        return ("video" in vision_tower_name.lower()) or ("internVideo2_patch" in vision_tower_name) or ("internVideo2_global" in vision_tower_name)
 
     def prepare_inputs_labels_for_multimodal(self, input_ids, position_ids, attention_mask, past_key_values, labels, images, modalities=["image"], image_sizes=None, video_embeddings=None):
         vision_tower = self.get_vision_tower()
@@ -289,6 +289,41 @@ class LlavaMetaForCausalLM(ABC):
                 # breakpoint()
                 projected_video_features = self.encode_images(video_embeddings[0], projector_only=True)
                 image_features = [projected_video_features]
+        elif self.check_video_embedding(vision_tower.vision_tower_name) and vision_tower.use_vision_encoder:
+            # Encode image with image encoder then concat with video patch feature
+            # Original processing of images and encoding (no projector until after concat)
+            if type(images) is list or images.ndim == 5:
+                if type(images) is list:
+                    images = [x.unsqueeze(0) if x.ndim == 3 else x for x in images]
+
+                video_idx_in_batch = []
+                for _ in range(len(modalities)):
+                    if modalities[_] == "video":
+                        video_idx_in_batch.append(_)
+
+                images_list = []
+                for image in images:
+                    if image.ndim == 4:
+                        images_list.append(image)
+                    else:
+                        images_list.append(image.unsqueeze(0))
+
+                concat_images = torch.cat([image for image in images_list], dim=0)
+                split_sizes = [image.shape[0] for image in images_list]
+                # encoded_image_features = self.encode_images(concat_images)
+                # Pass through image encoder only to get image features
+                encoded_image_features = self.get_model().get_vision_tower()(concat_images)
+                # Pool both image and video features and concatenate along feature dimension
+                # sigLIP features: torch.Size([33, 729, 1152])
+                # videoMAE feature: torch.Size([1568, 768])
+                # Pool sigLIP to [33, 1152], pool video_embedding to [1, feat_dim], then repeat video_embedding to match image num_frames
+                image_features_pooled = encoded_image_features.mean(dim=1)  # [num_frames, 1152]
+                video_features_pooled = video_embeddings[0].mean(dim=0, keepdim=True)  # [1, vid_feat_dim]
+                video_features_repeated = video_features_pooled.repeat(image_features_pooled.shape[0], 1)  # [num_frames, vid_feat_dim]
+                vid_and_img_features = torch.cat([image_features_pooled, video_features_repeated], dim=1)
+                # Pass through projector only
+                projected_vid_and_img_feats = self.encode_images(vid_and_img_features, projector_only=True)
+                image_features = [projected_vid_and_img_feats]
         else: 
             # Original flow of encoding images with vision tower + projector then pooling
             if type(images) is list or images.ndim == 5:

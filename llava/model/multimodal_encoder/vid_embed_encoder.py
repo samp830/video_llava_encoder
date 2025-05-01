@@ -4,10 +4,7 @@ import torch.nn.functional as F
 from llava.utils import rank0_print
 
 from transformers import CLIPImageProcessor
-# from .clip_encoder import CLIPVisionTower 
-# from .siglip_encoder import SigLipVisionTower, SigLipImageProcessor
-# from .mlcd_encoder import MLCDVisionTower
-# from .hf_vision import HFVisionTower
+from .siglip_encoder import SigLipVisionTower, SigLipImageProcessor
 
 
 class VideoEmbeddingVisionTower(nn.Module):
@@ -17,10 +14,10 @@ class VideoEmbeddingVisionTower(nn.Module):
         Video embedding tensors are loaded in _get_item() in LazySupervisedDataset (llava/train/train.py)
 
         vision_tower: must be a string formatted like below
-            "video_embedding_<video model>" or 
-            "video_embedding_<video model>_with_<image_encoder>" or
+            "<video model>" or 
+            "<video model>_with_<image_encoder>" or
             "video_embedding_concat_<global or patch>
-            <video model> options: [videoMAE, internVideo2]
+            <video model> options: [videoMAE, internVideo2] with _patch or _global
 
             TO ADDITIONALLY USE IMAGE ENCODER(S) AND CONCAT VIDEO + IMAGE FEATURES
             add "_with_<image_encoder>" to the vision_tower string "video_embedding_<video model>_with_<image_encoder>"
@@ -49,26 +46,14 @@ class VideoEmbeddingVisionTower(nn.Module):
         self.is_loaded = False
         self.config = vision_tower_cfg
 
-        # # All possible video embedding models
-        # video_models = ["videoMAE", "internVideo2"]
-        # self.video_embedding = None
-        # # TODO: add option for both (pre-loaded features will be concatenated in dataset class)
-        # # self.video_embedding = "internvideo2"
-        # for model in video_models:
-        #     if model in vision_tower:
-        #         self.video_embedding = model
-        #         break
-        # if self.video_embedding is None:
-        #     raise ValueError(f"Unknown video embedding for: {vision_tower}")
-
         rank0_print(f"Loading {self.vision_tower_name} Embedding Vision Tower")
 
         self.use_vision_encoder = False
         if "_with_" in vision_tower:
             self.use_vision_encoder = True
-            # TODO: init vision tower once we know best image encoder
-            # implement forward() and set self.image_processor accordingly
-            # add something like self.image_encoder and set it to the model
+            # Can only use with SigLIP (best solo image encoder)
+            self.image_encoder = SigLipVisionTower("google/siglip-so400m-patch14-384", vision_tower_cfg=vision_tower_cfg, **kwargs)
+            self.image_processor = self.image_encoder.image_processor
         else:
             # Just use dummy, CLIP Image Processor 
             # (not used if only using video embeddings, needed for image loading in Dataset class)
@@ -94,15 +79,15 @@ class VideoEmbeddingVisionTower(nn.Module):
 
         Concatenation of video emebeddings and image embeddings is handled in prepare_inputs_labels_for_multimodal()
         """
-        # if self.use_vision_encoder:
-        #    return self.image_encoder(images)
-        return images
+        if self.use_vision_encoder:
+           return self.image_encoder(images)
+        else:
+            return images
 
     @property
     def hidden_size(self):
-        # TODO: for video embedding + image encoder
-        # if self.use_vision_encoder:
-        #    return self.image_encoder.hidden_size + self._hidden_size
+        if self.use_vision_encoder:
+           return self.image_encoder.hidden_size + self._hidden_size
         return self._hidden_size
 
     @property
