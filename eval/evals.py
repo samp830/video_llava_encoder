@@ -117,7 +117,9 @@ def parse_args():
         "video_embedding_videoMAE",
         "video_embedding_videoMAE_patch",
         "video_embedding_concat_global",
-        "video_embedding_concat_patch"
+        "video_embedding_concat_patch",
+        "videoMAE_patch_with_siglip",
+        "internVideo2_patch_with_siglip"
     ])
     p.add_argument("--checkpoint-dir", required=True, default="/data/jiahuic/vid_llava_checkpoints/CLIP_MLCD_multiEncoder_finetune_only-adapters-multi_image_encoder-Qwen_Qwen2-7B-Instruct/checkpoint-6000/mm_projector.bin")
     p.add_argument("--dataset-name", required=True, choices=["mvbench_action_localization", "mvbench_egocentric_navigation", 
@@ -280,25 +282,38 @@ def main():
                 emb = torch.cat([upsampled_internvideo2_embed, videomae_embed], dim=-1)
             elif args.vision_tower == "video_embedding_videoMAE":
                 emb = torch.load(ex["videoMAE_global_embedding"], map_location=DEVICE) 
-            elif args.vision_tower == "video_embedding_videoMAE_patch": 
+            elif "videoMAE_patch" in args.vision_tower:
                 emb = torch.load(ex["videoMAE_patch_embedding"], map_location=DEVICE) 
+            elif "internVideo2_patch" in args.vision_tower:
+                emb = torch.load(ex["internVideo2_patch_embedding"], map_location=DEVICE) 
             else:
-                emb = torch.load(ex[args.vision_tower], map_location=DEVICE) 
+                emb = torch.load(ex[args.vision_tower], map_location=DEVICE)
             emb = emb.to(DEVICE)                                      
             emb = emb.half()
             if emb.ndim == 1:
                 emb = emb.unsqueeze(0)
             num_patches = 1
             # emb = simulate_patches(emb, num_patches)
-            out_ids = model.generate(
-                inputs            = input_ids,
-                images      = None,
-                video_embeddings  = [emb],
-                modalities        = ["video"],
-                do_sample         = False,
-                temperature       = 0.0,
-                max_new_tokens    = 16,
-            )
+            if "_with_siglip" not in args.vision_tower:
+                out_ids = model.generate(
+                    inputs            = input_ids,
+                    images            = None,
+                    video_embeddings  = [emb],
+                    modalities        = ["video"],
+                    do_sample         = False,
+                    temperature       = 0.0,
+                    max_new_tokens    = 16,
+                )
+            else:
+               out_ids = model.generate(
+                    inputs            = input_ids,
+                    images            = [pixel_values],
+                    video_embeddings  = [emb],
+                    modalities        = ["video"],
+                    do_sample         = False,
+                    temperature       = 0.0,
+                    max_new_tokens    = 16,
+                ) 
         else:
             out_ids = model.generate(
                 inputs      = input_ids,

@@ -151,7 +151,6 @@ class LlavaQwenForCausalLM(Qwen2ForCausalLM, LlavaMetaForCausalLM):
             raise NotImplementedError("`inputs_embeds` is not supported")
 
         if video_embeddings is not None:
-            # breakpoint()
             (inputs, position_ids, attention_mask, _, inputs_embeds, _) = self.prepare_inputs_labels_for_multimodal(inputs, position_ids, attention_mask, None, None, images, modalities=modalities,
                     image_sizes=image_sizes,
                     video_embeddings=video_embeddings,

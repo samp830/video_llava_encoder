@@ -62,18 +62,27 @@
 # # Global concat 
 # CHECKPOINT="/data/jiahuic/vid_llava_checkpoints/internVideo2videoMAE_Global_videoLLaVA_finetune_only-adapters-video_embedding_concat_global-Qwen_Qwen2-7B-Instruct/mm_projector.bin"
 # VISION_TOWER="video_embedding_concat_global"
-# Patch concat
-CHECKPOINT="/data/jiahuic/vid_llava_checkpoints/internVideo2videoMAE_Patch_videoLLaVA_finetune_only-adapters-video_embedding_concat_patch-Qwen_Qwen2-7B-Instruct/mm_projector.bin"
-VISION_TOWER="video_embedding_concat_patch"
+# # Patch concat
+# CHECKPOINT="/data/jiahuic/vid_llava_checkpoints/internVideo2videoMAE_Patch_videoLLaVA_finetune_only-adapters-video_embedding_concat_patch-Qwen_Qwen2-7B-Instruct/mm_projector.bin"
+# VISION_TOWER="video_embedding_concat_patch"
+
+# VIDEO AND IMAGE CONCAT EMBEDDINGS
+# # videoMAE + SigLIP
+# CHECKPOINT="/data/jiahuic/vid_llava_checkpoints/sigLIPvideoMAE_videoLLaVA_finetune_only-adapters-videoMAE_patch_with_siglip-Qwen_Qwen2-7B-Instruct/mm_projector.bin"
+# VISION_TOWER="videoMAE_patch_with_siglip"
+
+# internVideo2 + SigLIP
+CHECKPOINT="/data/jiahuic/vid_llava_checkpoints/sigLIPinternVideo2_videoLLaVA_finetune_only-adapters-internVideo2_patch_with_siglip-Qwen_Qwen2-7B-Instruct/mm_projector.bin"
+VISION_TOWER="internVideo2_patch_with_siglip"
 
 DATASETS=(
-  # "mvbench_action_localization"
-  # "mvbench_egocentric_navigation"
-  # "mvbench_moving_direction"
+  "mvbench_action_localization"
+  "mvbench_egocentric_navigation"
+  "mvbench_moving_direction"
   "mvbench_moving_count"
   "vinoground_textscore_subset"
   "vinoground_videoscore_subset"
-  # "temporalbench_subset"
+  "temporalbench_subset"
 )
 
 for DATASET in "${DATASETS[@]}"; do

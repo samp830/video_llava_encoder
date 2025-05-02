@@ -49,6 +49,16 @@
         "vinoground_text": 0.4790697674418605,
         "overall_average": 0.34582116216385633
     },
+    "videoMAE_patch_with_siglip": {
+        "temporalbench_subset": 0.46037735849056605,
+        "vinoground_text": 0.5023255813953489,
+        "mvbench_moving_count": 0.24,
+        "mvbench_egocentric_navigation": 0.325,
+        "mvbench_action_localization": 0.3,
+        "vinoground_video": 0.5093023255813953,
+        "mvbench_moving_direction": 0.23,
+        "overall_average": 0.3667150379239014
+    },
     "internVideo2_patch_embedding": {
         "mvbench_egocentric_navigation": 0.305,
         "mvbench_moving_direction": 0.195,
@@ -68,6 +78,16 @@
         "mvbench_moving_direction": 0.21,
         "mvbench_action_localization": 0.32,
         "overall_average": 0.3676349275998244
+    },
+    "internVideo2_patch_with_siglip": {
+        "vinoground_text": 0.4930232558139535,
+        "mvbench_moving_direction": 0.22,
+        "vinoground_video": 0.5232558139534884,
+        "temporalbench_subset": 0.3320754716981132,
+        "mvbench_moving_count": 0.25,
+        "mvbench_egocentric_navigation": 0.325,
+        "mvbench_action_localization": 0.275,
+        "overall_average": 0.345479220209365
     },
     "multi_image_siglip_clip_mlcd": {
         "vinoground_text": 0.48372093023255813,
