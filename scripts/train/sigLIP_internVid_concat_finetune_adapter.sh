@@ -14,14 +14,14 @@ export NCCL_SOCKET_IFNAME=eth0
 LLM_VERSION="Qwen/Qwen2-7B-Instruct"
 # Must be named: "video_embedding_<video model>"
 # <video model> options: videoMAE, internVideo2
-VISION_MODEL_VERSION="videoMAE_patch_with_siglip"
+VISION_MODEL_VERSION="internVideo2_patch_with_siglip"
 VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
 
 PROMPT_VERSION="qwen_1_5"
 
 
 # Use a descriptive run name
-BASE_RUN_NAME="sigLIPvideoMAE_videoLLaVA_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
+BASE_RUN_NAME="sigLIPinternVideo2_videoLLaVA_finetune_only-adapters-${VISION_MODEL_VERSION//\//_}-${LLM_VERSION//\//_}"
 
 export WANDB_NAME=$BASE_RUN_NAME
 export WANDB_PROJECT=VideoEncoders
@@ -32,7 +32,7 @@ wandb online
 
 # KAREN PATHS
 # CUDA_VISIBLE_DEVICES=5,6,7
-CUDA_VISIBLE_DEVICES=4,5,6,7 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29500 \
+CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=29502 \
     ../../llava/train/train_mem.py  \
     --deepspeed $(readlink -f ../zero3.json) \
     --model_name_or_path ${LLM_VERSION} \
@@ -66,7 +66,7 @@ CUDA_VISIBLE_DEVICES=4,5,6,7 torchrun --nproc_per_node=4 --nnodes=1 --node_rank=
     --logging_steps 1 \
     --model_max_length 32768 \
     --gradient_checkpointing True \
-    --dataloader_num_workers 0 \
+    --dataloader_num_workers 10 \
     --lazy_preprocess True \
     --report_to wandb
 # exit 0;
